@@ -4,7 +4,7 @@ CropAdvisor is a local-first crop planning project. Models will be implemented a
 
 ## Milestone 1 (current)
 
-This milestone establishes the repository, dataset registry, safe data downloader, and source log. Dataset downloads are deliberate and data-only. Review dataset terms before any commercial use. Training and application milestones are not included yet.
+This milestone establishes the repository, dataset registry, safe data downloader, and source log. Project defaults: India, major local crops, INR, hectares and acres, GPU available for training, and hosting undecided. See `config/project.yaml`. Dataset downloads are deliberate and data-only. Review dataset terms before any commercial use. Training and application milestones are not included yet.
 
 ## Setup
 
@@ -30,3 +30,4 @@ Run `make data` to download eligible public datasets. Failed or authentication-g
 
 1. [x] Repository and dataset setup
 2. [ ] Data cleaning and exploration (waiting for Milestone 1 approval)
+

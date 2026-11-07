@@ -1,0 +1,8 @@
+project:
+  name: CropAdvisor
+  country: India
+  target_crops: major_local_crops
+  currency: INR
+  land_units: [hectare, acre]
+  training_hardware: gpu_available
+  hosting: undecided
