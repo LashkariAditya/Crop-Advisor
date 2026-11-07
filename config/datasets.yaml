@@ -1,0 +1,25 @@
+version: 1
+datasets:
+  - name: eurosat_rgb
+    url: https://zenodo.org/records/7711810/files/EuroSAT_RGB.zip?download=1
+    type: zip
+    license: MIT (project repository); Copernicus Sentinel terms apply
+    destination: data/raw/eurosat_rgb
+    expected_files: [EuroSAT_RGB.zip]
+    enabled: true
+    checksum: f46e308c4d50d4bf32fedad2d3d62f3b
+    checksum_algorithm: md5
+  - name: faostat_crop_production
+    url: https://bulks-faostat.fao.org/production/Production_Crops_Livestock_E_All_Data_(Normalized).zip
+    type: zip
+    license: FAOSTAT terms; recheck before redistribution
+    destination: data/raw/faostat_crop_production
+    expected_files: [Production_Crops_Livestock_E_All_Data_(Normalized).zip]
+    enabled: true
+  - name: faostat_producer_prices
+    url: https://bulks-faostat.fao.org/production/Prices_E_All_Data_(Normalized).zip
+    type: zip
+    license: FAOSTAT terms; recheck before redistribution
+    destination: data/raw/faostat_producer_prices
+    expected_files: [Prices_E_All_Data_(Normalized).zip]
+    enabled: true

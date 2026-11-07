@@ -1,0 +1,15 @@
+# Dataset sources
+
+Last checked: 2026-11-07. No dataset files have been downloaded yet. Sizes below are source-published archive sizes when available. Download dates and local file counts are filled in by `scripts/download_data.py`.
+
+| Name | URL | License / terms | Size / content | Downloaded | Intended use / status |
+|---|---|---|---|---|---|
+| EuroSAT RGB | https://zenodo.org/records/7711810 | MIT per project repository; Copernicus Sentinel terms also apply | 94.7 MB; 27,000 labeled satellite images, 10 land-cover classes | Not downloaded | Land-cover helper only; URL page and repository verified 2026-11-07; automated direct-file download enabled |
+| FAOSTAT crop production | https://bulks-faostat.fao.org/production/Production_Crops_Livestock_E_All_Data_(Normalized).zip | FAOSTAT terms; verify current terms before redistribution/commercial use | ~33 MB published in source listing; normalized crop and livestock statistics | Not downloaded | Production/yield data; URL responded 200 on 2026-11-07; automated download enabled |
+| FAOSTAT producer prices | https://bulks-faostat.fao.org/production/Prices_E_All_Data_(Normalized).zip | FAOSTAT terms; verify current terms before redistribution/commercial use | ~11 MB published in source listing; producer price observations | Not downloaded | Price history; URL responded 200 on 2026-11-07; automated download enabled |
+| Soil Classification Dataset | https://github.com/Phantom-fs/Soil-Classification-Dataset | CC BY-NC 4.0 according to repository; non-commercial only | Seven soil classes; exact data size not published on repo landing page | Not downloaded | Candidate soil images; repository page verified, but repo says actual dataset hosted via Kaggle/Hugging Face and must be acquired/reviewed manually. Not auto-downloaded. |
+| Crop Recommendation Dataset | https://www.kaggle.com/datasets/atharvaingle/crop-recommendation-dataset | Kaggle dataset terms; account/API access | Tabular N,P,K, temperature, humidity, pH, rainfall, crop label | Not downloaded | Candidate crop suitability data; requires Kaggle account and license/terms review. Manual for now. |
+| Crop Production in India | https://www.kaggle.com/datasets/abhinand05/crop-production-in-india | Kaggle dataset terms; account/API access | State, district, crop, season, area, production | Not downloaded | Candidate regional production data; requires Kaggle account and license/terms review. Manual for now. |
+| PlantVillage (optional) | https://github.com/spMohanty/PlantVillage-Dataset | No license identified in the linked GitHub repo; do not use until a dataset license is verified | Source describes 54,306 leaf images and 38 classes; size not confirmed here | Not downloaded | Excluded pending clear license and download method. GitHub URL responded 200 on 2026-11-07. |
+
+The Zenodo EuroSAT record reports 27,000 images and lists `EuroSAT_RGB.zip` (94.7 MB); its project repository states MIT license. FAOSTAT archive sizes are approximate, as the provider can replace bulk files in place. This log is not a legal opinion. Re-check source terms before training or distribution.
