@@ -77,6 +77,11 @@ def download(entry: dict) -> dict | None:
                     bad_member = archive.testzip()
                     if bad_member:
                         raise ValueError(f"corrupt zip member: {bad_member}")
+                    root = destination.resolve()
+                    for member in archive.infolist():
+                        member_path = (destination / member.filename).resolve()
+                        if root not in member_path.parents and member_path != root:
+                            raise ValueError(f"unsafe archive path: {member.filename}")
                     archive.extractall(destination)
             files = [p for p in destination.rglob("*") if p.is_file() and p.name != ".DS_Store"]
             return {"name": name, "url": url, "license": entry.get("license", "unspecified"), "destination": str(destination.relative_to(ROOT)), "downloaded_at_utc": datetime.now(timezone.utc).isoformat(), "file_count": len(files), "total_bytes": sum(p.stat().st_size for p in files), "files": [str(p.relative_to(ROOT)) for p in files]}
@@ -99,7 +104,7 @@ def update_sources(records: list[dict]) -> None:
 def main() -> int:
     with CONFIG.open(encoding="utf-8-sig") as stream:
         config = yaml.safe_load(stream)
-    records = []
+    downloaded_now = []
     prior = {item["name"]: item for item in json.loads(MANIFEST.read_text(encoding="utf-8"))} if MANIFEST.exists() else {}
     for entry in config.get("datasets", []):
         if not entry.get("enabled", False):
@@ -107,11 +112,11 @@ def main() -> int:
         result = download(entry)
         if result:
             prior[result["name"]] = result
+            downloaded_now.append(result)
     MANIFEST.parent.mkdir(parents=True, exist_ok=True)
     MANIFEST.write_text(json.dumps(list(prior.values()), indent=2), encoding="utf-8")
-    records = [v for v in prior.values() if v.get("downloaded_at_utc")]
-    if records:
-        update_sources([r for r in records if r["name"] not in {x["name"] for x in json.loads(MANIFEST.read_text(encoding="utf-8")) if False}])
+    if downloaded_now:
+        update_sources(downloaded_now)
     return 0
 
 
