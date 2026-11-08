@@ -1,0 +1,281 @@
+{
+  "name": "soil_photo_cnn",
+  "task": "soil",
+  "trained_from_scratch": true,
+  "dataset": "data\\raw\\soil_classification_nc\\Orignal-Dataset",
+  "classes": [
+    "Alluvial_Soil",
+    "Arid_Soil",
+    "Black_Soil",
+    "Laterite_Soil",
+    "Mountain_Soil",
+    "Red_Soil",
+    "Yellow_Soil"
+  ],
+  "class_balance": {
+    "Alluvial_Soil": 52,
+    "Arid_Soil": 284,
+    "Black_Soil": 255,
+    "Laterite_Soil": 219,
+    "Mountain_Soil": 201,
+    "Red_Soil": 109,
+    "Yellow_Soil": 69
+  },
+  "image_size": [
+    32,
+    32
+  ],
+  "epochs_requested": 12,
+  "epochs_trained": 12,
+  "date": "2026-11-08",
+  "seed": 7,
+  "split_counts": {
+    "train": 829,
+    "validation": 178,
+    "test": 182
+  },
+  "augmentation": "random flips, right-angle rotations, crop and brightness applied only to training partition",
+  "validation_metrics": {
+    "accuracy": 0.7471910112359551,
+    "classes": [
+      {
+        "precision": 0.23076923076923078,
+        "recall": 0.375,
+        "f1": 0.2857142857142857
+      },
+      {
+        "precision": 0.7096774193548387,
+        "recall": 0.5116279069767442,
+        "f1": 0.5945945945945946
+      },
+      {
+        "precision": 0.926829268292683,
+        "recall": 1.0,
+        "f1": 0.9620253164556963
+      },
+      {
+        "precision": 0.7,
+        "recall": 0.6363636363636364,
+        "f1": 0.6666666666666666
+      },
+      {
+        "precision": 0.8275862068965517,
+        "recall": 0.8,
+        "f1": 0.8135593220338982
+      },
+      {
+        "precision": 0.7894736842105263,
+        "recall": 0.9375,
+        "f1": 0.8571428571428572
+      },
+      {
+        "precision": 0.6666666666666666,
+        "recall": 1.0,
+        "f1": 0.8
+      }
+    ],
+    "confusion_matrix": [
+      [
+        3,
+        0,
+        0,
+        2,
+        1,
+        0,
+        2
+      ],
+      [
+        7,
+        22,
+        1,
+        6,
+        4,
+        1,
+        2
+      ],
+      [
+        0,
+        0,
+        38,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        2,
+        6,
+        0,
+        21,
+        0,
+        3,
+        1
+      ],
+      [
+        1,
+        3,
+        2,
+        0,
+        24,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1,
+        0,
+        15,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        10
+      ]
+    ]
+  },
+  "test_metrics": {
+    "accuracy": 0.7252747252747253,
+    "classes": [
+      {
+        "precision": 0.23529411764705882,
+        "recall": 0.5,
+        "f1": 0.31999999999999995
+      },
+      {
+        "precision": 0.6216216216216216,
+        "recall": 0.5348837209302325,
+        "f1": 0.575
+      },
+      {
+        "precision": 1.0,
+        "recall": 0.9487179487179487,
+        "f1": 0.9736842105263158
+      },
+      {
+        "precision": 0.6785714285714286,
+        "recall": 0.5757575757575758,
+        "f1": 0.6229508196721312
+      },
+      {
+        "precision": 0.7647058823529411,
+        "recall": 0.8387096774193549,
+        "f1": 0.7999999999999999
+      },
+      {
+        "precision": 0.8125,
+        "recall": 0.7647058823529411,
+        "f1": 0.787878787878788
+      },
+      {
+        "precision": 0.7692307692307693,
+        "recall": 0.9090909090909091,
+        "f1": 0.8333333333333333
+      }
+    ],
+    "confusion_matrix": [
+      [
+        4,
+        2,
+        0,
+        0,
+        1,
+        0,
+        1
+      ],
+      [
+        7,
+        23,
+        0,
+        6,
+        5,
+        0,
+        2
+      ],
+      [
+        1,
+        0,
+        37,
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        4,
+        7,
+        0,
+        19,
+        0,
+        3,
+        0
+      ],
+      [
+        0,
+        5,
+        0,
+        0,
+        26,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        3,
+        1,
+        13,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        10
+      ]
+    ]
+  },
+  "training_loss_curve": [
+    1.5678125101351408,
+    1.0659623168583265,
+    0.89791601144917,
+    0.7981102348531609,
+    0.7234826867687913,
+    0.6727960524645085,
+    0.6282912847563175,
+    0.6128209071167058,
+    0.5501979803456943,
+    0.5724025097141848,
+    0.5205436980581787,
+    0.5019487071608345
+  ],
+  "validation_loss_curve": [
+    1.131280961733516,
+    0.9371389035793862,
+    0.8730241206792343,
+    0.7292486685891829,
+    0.7845016585176006,
+    0.6880629829060515,
+    0.786173175488446,
+    0.6822120540142256,
+    0.6760287000358376,
+    0.7119551059517663,
+    0.636260214943113,
+    0.6325299834885609
+  ],
+  "overfit_flag": false,
+  "warning": "Verify the dataset license, image context, regional coverage and class labels before field use.",
+  "source_license": "CC BY-NC 4.0 repository terms; underlying photo rights/provenance may vary. See DATA_SOURCES.md.",
+  "public_distribution": "Excluded from the public image; research/education use only pending rights review.",
+  "augmentation_copies": 1
+}

@@ -1,0 +1,172 @@
+{
+  "name": "soil_photo_resnet18_transfer",
+  "task": "soil",
+  "source_license": "CC BY-NC 4.0 repository; underlying photo provenance may vary; research/education only pending rights review.",
+  "trained_from_scratch": false,
+  "pretrained_weights": "torchvision ResNet18 ImageNet1K_V1",
+  "device": "cpu",
+  "dataset": "D:\\CropAdvisor\\data\\raw\\soil_classification_nc\\Orignal-Dataset",
+  "classes": [
+    "Alluvial_Soil",
+    "Arid_Soil",
+    "Black_Soil",
+    "Laterite_Soil",
+    "Mountain_Soil",
+    "Red_Soil",
+    "Yellow_Soil"
+  ],
+  "additional_training_data": {
+    "path": "data/raw/soil_classification_nc/cyaug_source",
+    "images_added_after_exact_duplicate_removal": 3909,
+    "type": "CycleGAN-generated; source-photo lineage is not available for every image"
+  },
+  "image_size": 160,
+  "split": {
+    "method": "stratified random original-photo split, seed 7; validation/test never augmented",
+    "train_original": 829,
+    "train_with_synthetic": 4738,
+    "validation": 178,
+    "test": 182
+  },
+  "epochs_requested": 10,
+  "epochs_trained": 10,
+  "best_validation_epoch": 10,
+  "validation_selection": "macro-F1, with accuracy as tie-breaker",
+  "validation_metrics": {
+    "validation_loss": 0.5128474456540654,
+    "validation_accuracy": 0.8314606741573034,
+    "validation_macro_f1": 0.7675862720351374
+  },
+  "test_metrics": {
+    "accuracy": 0.8076923076923077,
+    "macro_f1": 0.7597178229954838,
+    "per_class": [
+      {
+        "precision": 0.25,
+        "recall": 0.375,
+        "f1": 0.3,
+        "support": 8
+      },
+      {
+        "precision": 0.813953488372093,
+        "recall": 0.813953488372093,
+        "f1": 0.8139534883720931,
+        "support": 43
+      },
+      {
+        "precision": 1.0,
+        "recall": 0.8461538461538461,
+        "f1": 0.9166666666666666,
+        "support": 39
+      },
+      {
+        "precision": 0.8235294117647058,
+        "recall": 0.8484848484848485,
+        "f1": 0.8358208955223881,
+        "support": 33
+      },
+      {
+        "precision": 0.7352941176470589,
+        "recall": 0.8064516129032258,
+        "f1": 0.7692307692307693,
+        "support": 31
+      },
+      {
+        "precision": 0.8823529411764706,
+        "recall": 0.8823529411764706,
+        "f1": 0.8823529411764706,
+        "support": 17
+      },
+      {
+        "precision": 0.8888888888888888,
+        "recall": 0.7272727272727273,
+        "f1": 0.7999999999999999,
+        "support": 11
+      }
+    ]
+  },
+  "test_reused_in_prior_experiment": true,
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 1.4119315291819767,
+      "train_accuracy": 0.6158716758125792,
+      "validation_loss": 1.274365514851688,
+      "validation_accuracy": 0.6460674157303371,
+      "validation_macro_f1": 0.5981281764938284
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.8320568393886014,
+      "train_accuracy": 0.8349514563106796,
+      "validation_loss": 1.1589619048525779,
+      "validation_accuracy": 0.6629213483146067,
+      "validation_macro_f1": 0.585263690615221
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.6706839563374581,
+      "train_accuracy": 0.8672435626846771,
+      "validation_loss": 0.8815650417563621,
+      "validation_accuracy": 0.7191011235955056,
+      "validation_macro_f1": 0.6525162489590466
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.5160733408040263,
+      "train_accuracy": 0.8961587167581258,
+      "validation_loss": 0.71110051468517,
+      "validation_accuracy": 0.7752808988764045,
+      "validation_macro_f1": 0.7155604644400739
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.3909684065375564,
+      "train_accuracy": 0.9178978471929083,
+      "validation_loss": 0.6014001556996549,
+      "validation_accuracy": 0.7696629213483146,
+      "validation_macro_f1": 0.6886197780547627
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.3257800519290278,
+      "train_accuracy": 0.9269734065006332,
+      "validation_loss": 0.5568264977315839,
+      "validation_accuracy": 0.8258426966292135,
+      "validation_macro_f1": 0.7531519171491948
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.29855940149725113,
+      "train_accuracy": 0.9297171802448291,
+      "validation_loss": 0.5426437426149175,
+      "validation_accuracy": 0.8314606741573034,
+      "validation_macro_f1": 0.7653981878506074
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.2652504683396342,
+      "train_accuracy": 0.9411143942591811,
+      "validation_loss": 0.541777936930067,
+      "validation_accuracy": 0.8089887640449438,
+      "validation_macro_f1": 0.7410272507217517
+    },
+    {
+      "epoch": 9,
+      "train_loss": 0.24802662293812353,
+      "train_accuracy": 0.9377374419586323,
+      "validation_loss": 0.4967732898304971,
+      "validation_accuracy": 0.8314606741573034,
+      "validation_macro_f1": 0.7625936485933383
+    },
+    {
+      "epoch": 10,
+      "train_loss": 0.21565542620110983,
+      "train_accuracy": 0.949556775010553,
+      "validation_loss": 0.5128474456540654,
+      "validation_accuracy": 0.8314606741573034,
+      "validation_macro_f1": 0.7675862720351374
+    }
+  ],
+  "warning": "Small imbalanced dataset; random file split may contain related acquisition contexts across partitions. Test results are exploratory because this split was evaluated in prior experiments. Synthetic image lineage to the original training data is not fully known. Not field-validated."
+}

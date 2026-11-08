@@ -1,0 +1,12 @@
+services:
+  cropadvisor:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "127.0.0.1:8000:8000"
+    environment:
+      CROPADVISOR_PUBLIC_RELEASE: "1"
+      CROPADVISOR_ALLOWED_ORIGINS: ""
+      PORT: "8000"
+    restart: unless-stopped

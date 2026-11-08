@@ -1,0 +1,522 @@
+{
+  "name": "soil_core_fraction_resnet18",
+  "task": "geotechnical soil-core main fraction",
+  "source": "Hugging Face grano1/core_sample_image_data",
+  "source_license": "MIT dataset card; cite Granitzer et al. (3FOMLIG 2025)",
+  "dataset_rows_after_label_filter": 3423,
+  "labels": [
+    "fS",
+    "mS",
+    "U",
+    "gS"
+  ],
+  "excluded_labels": "Rare classes were excluded before splitting: fS+mS, fS+U, S, G, fG; those labels are not merged into pure fractions.",
+  "split_method": "Group by borehole identifier (BKF_nn_yy), 70/15/15 approximate, seed 17; all splits drawn from source official train/val/test then regrouped to prevent same-borehole leakage.",
+  "split_boreholes": {
+    "train": [
+      "BKF_02_19",
+      "BKF_03_19",
+      "BKF_04_19",
+      "BKF_05_19",
+      "BKF_06_19",
+      "BKF_07_19",
+      "BKF_14a_19",
+      "BKF_15_19",
+      "BKF_19_19",
+      "BKF_20_19"
+    ],
+    "validation": [
+      "BKF_08_19",
+      "BKF_14c_19"
+    ],
+    "test": [
+      "BKF_01_19",
+      "BKF_10_19",
+      "BKF_12_19",
+      "BKF_13_19",
+      "BKF_14b_19",
+      "BKF_18a_19",
+      "BKF_21_19"
+    ]
+  },
+  "split_counts": {
+    "train": 2310,
+    "validation": 504,
+    "test": 609
+  },
+  "device": "cpu",
+  "pretrained": "torchvision ResNet18 ImageNet1K_V1",
+  "epochs_trained": 12,
+  "best_validation_epoch": 12,
+  "validation_metrics": {
+    "accuracy": 0.6825396825396826,
+    "macro_f1": 0.5986046121714619,
+    "per_class": {
+      "fS": {
+        "precision": 0.8825757575757576,
+        "recall": 0.7516129032258064,
+        "f1": 0.8118466898954703,
+        "support": 310
+      },
+      "mS": {
+        "precision": 0.38461538461538464,
+        "recall": 0.3,
+        "f1": 0.33707865168539325,
+        "support": 100
+      },
+      "U": {
+        "precision": 0.48214285714285715,
+        "recall": 0.75,
+        "f1": 0.5869565217391304,
+        "support": 36
+      },
+      "gS": {
+        "precision": 0.5094339622641509,
+        "recall": 0.9310344827586207,
+        "f1": 0.6585365853658537,
+        "support": 58
+      }
+    }
+  },
+  "test_metrics": {
+    "accuracy": 0.6945812807881774,
+    "macro_f1": 0.5545032159427705,
+    "per_class": {
+      "fS": {
+        "precision": 0.6464646464646465,
+        "recall": 0.8135593220338984,
+        "f1": 0.7204502814258913,
+        "support": 236
+      },
+      "mS": {
+        "precision": 0.7632850241545893,
+        "recall": 0.6245059288537549,
+        "f1": 0.6869565217391305,
+        "support": 253
+      },
+      "U": {
+        "precision": 0.75,
+        "recall": 0.75,
+        "f1": 0.75,
+        "support": 96
+      },
+      "gS": {
+        "precision": 0.1111111111111111,
+        "recall": 0.041666666666666664,
+        "f1": 0.06060606060606061,
+        "support": 24
+      }
+    }
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_accuracy": 0.4575757575757576,
+      "validation": {
+        "accuracy": 0.32936507936507936,
+        "macro_f1": 0.2994975517959959,
+        "per_class": {
+          "fS": {
+            "precision": 0.8091603053435115,
+            "recall": 0.3419354838709677,
+            "f1": 0.4807256235827664,
+            "support": 310
+          },
+          "mS": {
+            "precision": 0.3333333333333333,
+            "recall": 0.18,
+            "f1": 0.23376623376623376,
+            "support": 100
+          },
+          "U": {
+            "precision": 0.09420289855072464,
+            "recall": 0.7222222222222222,
+            "f1": 0.16666666666666666,
+            "support": 36
+          },
+          "gS": {
+            "precision": 0.37209302325581395,
+            "recall": 0.27586206896551724,
+            "f1": 0.31683168316831684,
+            "support": 58
+          }
+        }
+      }
+    },
+    {
+      "epoch": 2,
+      "train_accuracy": 0.6506493506493507,
+      "validation": {
+        "accuracy": 0.2777777777777778,
+        "macro_f1": 0.27094140549062223,
+        "per_class": {
+          "fS": {
+            "precision": 0.875,
+            "recall": 0.24838709677419354,
+            "f1": 0.38693467336683424,
+            "support": 310
+          },
+          "mS": {
+            "precision": 0.4,
+            "recall": 0.1,
+            "f1": 0.16000000000000003,
+            "support": 100
+          },
+          "U": {
+            "precision": 0.09763313609467456,
+            "recall": 0.9166666666666666,
+            "f1": 0.1764705882352941,
+            "support": 36
+          },
+          "gS": {
+            "precision": 0.37735849056603776,
+            "recall": 0.3448275862068966,
+            "f1": 0.3603603603603604,
+            "support": 58
+          }
+        }
+      }
+    },
+    {
+      "epoch": 3,
+      "train_accuracy": 0.71991341991342,
+      "validation": {
+        "accuracy": 0.4305555555555556,
+        "macro_f1": 0.3702184786128191,
+        "per_class": {
+          "fS": {
+            "precision": 0.8176470588235294,
+            "recall": 0.4483870967741935,
+            "f1": 0.5791666666666666,
+            "support": 310
+          },
+          "mS": {
+            "precision": 0.42105263157894735,
+            "recall": 0.08,
+            "f1": 0.13445378151260506,
+            "support": 100
+          },
+          "U": {
+            "precision": 0.13716814159292035,
+            "recall": 0.8611111111111112,
+            "f1": 0.23664122137404578,
+            "support": 36
+          },
+          "gS": {
+            "precision": 0.43820224719101125,
+            "recall": 0.6724137931034483,
+            "f1": 0.5306122448979591,
+            "support": 58
+          }
+        }
+      }
+    },
+    {
+      "epoch": 4,
+      "train_accuracy": 0.7303030303030303,
+      "validation": {
+        "accuracy": 0.49404761904761907,
+        "macro_f1": 0.41235247502693606,
+        "per_class": {
+          "fS": {
+            "precision": 0.8578947368421053,
+            "recall": 0.5258064516129032,
+            "f1": 0.652,
+            "support": 310
+          },
+          "mS": {
+            "precision": 0.45454545454545453,
+            "recall": 0.1,
+            "f1": 0.16393442622950818,
+            "support": 100
+          },
+          "U": {
+            "precision": 0.16042780748663102,
+            "recall": 0.8333333333333334,
+            "f1": 0.26905829596412556,
+            "support": 36
+          },
+          "gS": {
+            "precision": 0.4380952380952381,
+            "recall": 0.7931034482758621,
+            "f1": 0.5644171779141105,
+            "support": 58
+          }
+        }
+      }
+    },
+    {
+      "epoch": 5,
+      "train_accuracy": 0.7718614718614719,
+      "validation": {
+        "accuracy": 0.5634920634920635,
+        "macro_f1": 0.44199071740280604,
+        "per_class": {
+          "fS": {
+            "precision": 0.8521739130434782,
+            "recall": 0.632258064516129,
+            "f1": 0.7259259259259259,
+            "support": 310
+          },
+          "mS": {
+            "precision": 0.5384615384615384,
+            "recall": 0.07,
+            "f1": 0.12389380530973453,
+            "support": 100
+          },
+          "U": {
+            "precision": 0.2,
+            "recall": 0.8055555555555556,
+            "f1": 0.32044198895027626,
+            "support": 36
+          },
+          "gS": {
+            "precision": 0.4482758620689655,
+            "recall": 0.896551724137931,
+            "f1": 0.5977011494252874,
+            "support": 58
+          }
+        }
+      }
+    },
+    {
+      "epoch": 6,
+      "train_accuracy": 0.78008658008658,
+      "validation": {
+        "accuracy": 0.5714285714285714,
+        "macro_f1": 0.4521347097851986,
+        "per_class": {
+          "fS": {
+            "precision": 0.8145161290322581,
+            "recall": 0.6516129032258065,
+            "f1": 0.7240143369175627,
+            "support": 310
+          },
+          "mS": {
+            "precision": 0.4666666666666667,
+            "recall": 0.07,
+            "f1": 0.12173913043478263,
+            "support": 100
+          },
+          "U": {
+            "precision": 0.20422535211267606,
+            "recall": 0.8055555555555556,
+            "f1": 0.3258426966292135,
+            "support": 36
+          },
+          "gS": {
+            "precision": 0.5050505050505051,
+            "recall": 0.8620689655172413,
+            "f1": 0.6369426751592357,
+            "support": 58
+          }
+        }
+      }
+    },
+    {
+      "epoch": 7,
+      "train_accuracy": 0.7896103896103897,
+      "validation": {
+        "accuracy": 0.623015873015873,
+        "macro_f1": 0.4974931428995033,
+        "per_class": {
+          "fS": {
+            "precision": 0.859375,
+            "recall": 0.7096774193548387,
+            "f1": 0.7773851590106007,
+            "support": 310
+          },
+          "mS": {
+            "precision": 0.375,
+            "recall": 0.12,
+            "f1": 0.18181818181818182,
+            "support": 100
+          },
+          "U": {
+            "precision": 0.2978723404255319,
+            "recall": 0.7777777777777778,
+            "f1": 0.43076923076923074,
+            "support": 36
+          },
+          "gS": {
+            "precision": 0.4426229508196721,
+            "recall": 0.9310344827586207,
+            "f1": 0.6,
+            "support": 58
+          }
+        }
+      }
+    },
+    {
+      "epoch": 8,
+      "train_accuracy": 0.7909090909090909,
+      "validation": {
+        "accuracy": 0.6071428571428571,
+        "macro_f1": 0.49553469901998176,
+        "per_class": {
+          "fS": {
+            "precision": 0.8473895582329317,
+            "recall": 0.6806451612903226,
+            "f1": 0.7549194991055457,
+            "support": 310
+          },
+          "mS": {
+            "precision": 0.48148148148148145,
+            "recall": 0.13,
+            "f1": 0.20472440944881887,
+            "support": 100
+          },
+          "U": {
+            "precision": 0.2283464566929134,
+            "recall": 0.8055555555555556,
+            "f1": 0.3558282208588957,
+            "support": 36
+          },
+          "gS": {
+            "precision": 0.5247524752475248,
+            "recall": 0.9137931034482759,
+            "f1": 0.6666666666666667,
+            "support": 58
+          }
+        }
+      }
+    },
+    {
+      "epoch": 9,
+      "train_accuracy": 0.7974025974025974,
+      "validation": {
+        "accuracy": 0.6507936507936508,
+        "macro_f1": 0.5542258355295304,
+        "per_class": {
+          "fS": {
+            "precision": 0.8844621513944223,
+            "recall": 0.7161290322580646,
+            "f1": 0.7914438502673797,
+            "support": 310
+          },
+          "mS": {
+            "precision": 0.3484848484848485,
+            "recall": 0.23,
+            "f1": 0.27710843373493976,
+            "support": 100
+          },
+          "U": {
+            "precision": 0.38028169014084506,
+            "recall": 0.75,
+            "f1": 0.5046728971962617,
+            "support": 36
+          },
+          "gS": {
+            "precision": 0.4827586206896552,
+            "recall": 0.9655172413793104,
+            "f1": 0.6436781609195403,
+            "support": 58
+          }
+        }
+      }
+    },
+    {
+      "epoch": 10,
+      "train_accuracy": 0.8095238095238095,
+      "validation": {
+        "accuracy": 0.6527777777777778,
+        "macro_f1": 0.558816337593316,
+        "per_class": {
+          "fS": {
+            "precision": 0.8943089430894309,
+            "recall": 0.7096774193548387,
+            "f1": 0.7913669064748201,
+            "support": 310
+          },
+          "mS": {
+            "precision": 0.38461538461538464,
+            "recall": 0.25,
+            "f1": 0.30303030303030304,
+            "support": 100
+          },
+          "U": {
+            "precision": 0.37333333333333335,
+            "recall": 0.7777777777777778,
+            "f1": 0.5045045045045045,
+            "support": 36
+          },
+          "gS": {
+            "precision": 0.4745762711864407,
+            "recall": 0.9655172413793104,
+            "f1": 0.6363636363636365,
+            "support": 58
+          }
+        }
+      }
+    },
+    {
+      "epoch": 11,
+      "train_accuracy": 0.8069264069264069,
+      "validation": {
+        "accuracy": 0.6468253968253969,
+        "macro_f1": 0.5376396860955684,
+        "per_class": {
+          "fS": {
+            "precision": 0.892,
+            "recall": 0.7193548387096774,
+            "f1": 0.7964285714285715,
+            "support": 310
+          },
+          "mS": {
+            "precision": 0.36,
+            "recall": 0.18,
+            "f1": 0.23999999999999996,
+            "support": 100
+          },
+          "U": {
+            "precision": 0.37333333333333335,
+            "recall": 0.7777777777777778,
+            "f1": 0.5045045045045045,
+            "support": 36
+          },
+          "gS": {
+            "precision": 0.4418604651162791,
+            "recall": 0.9827586206896551,
+            "f1": 0.6096256684491979,
+            "support": 58
+          }
+        }
+      }
+    },
+    {
+      "epoch": 12,
+      "train_accuracy": 0.8272727272727273,
+      "validation": {
+        "accuracy": 0.6825396825396826,
+        "macro_f1": 0.5986046121714619,
+        "per_class": {
+          "fS": {
+            "precision": 0.8825757575757576,
+            "recall": 0.7516129032258064,
+            "f1": 0.8118466898954703,
+            "support": 310
+          },
+          "mS": {
+            "precision": 0.38461538461538464,
+            "recall": 0.3,
+            "f1": 0.33707865168539325,
+            "support": 100
+          },
+          "U": {
+            "precision": 0.48214285714285715,
+            "recall": 0.75,
+            "f1": 0.5869565217391304,
+            "support": 36
+          },
+          "gS": {
+            "precision": 0.5094339622641509,
+            "recall": 0.9310344827586207,
+            "f1": 0.6585365853658537,
+            "support": 58
+          }
+        }
+      }
+    }
+  ],
+  "warning": "This predicts geotechnical core fractions, not agricultural soil types; do not use as the CropAdvisor field-soil classifier."
+}

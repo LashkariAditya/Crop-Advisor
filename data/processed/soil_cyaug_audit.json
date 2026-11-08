@@ -1,0 +1,85 @@
+{
+  "distance_threshold_bits": 6,
+  "per_class": {
+    "Alluvial_Soil": {
+      "augmentation_images": 693,
+      "exact_original_copies": 51,
+      "near_original_train": 0,
+      "near_original_validation": 0,
+      "near_original_test": 0,
+      "near_original_ambiguous": 0,
+      "unmatched_or_low_similarity": 642,
+      "kept_for_training": 0
+    },
+    "Arid_Soil": {
+      "augmentation_images": 284,
+      "exact_original_copies": 284,
+      "near_original_train": 0,
+      "near_original_validation": 0,
+      "near_original_test": 0,
+      "near_original_ambiguous": 0,
+      "unmatched_or_low_similarity": 0,
+      "kept_for_training": 0
+    },
+    "Black_Soil": {
+      "augmentation_images": 1173,
+      "exact_original_copies": 255,
+      "near_original_train": 1,
+      "near_original_validation": 0,
+      "near_original_test": 0,
+      "near_original_ambiguous": 0,
+      "unmatched_or_low_similarity": 917,
+      "kept_for_training": 1
+    },
+    "Laterite_Soil": {
+      "augmentation_images": 219,
+      "exact_original_copies": 219,
+      "near_original_train": 0,
+      "near_original_validation": 0,
+      "near_original_test": 0,
+      "near_original_ambiguous": 0,
+      "unmatched_or_low_similarity": 0,
+      "kept_for_training": 0
+    },
+    "Mountain_Soil": {
+      "augmentation_images": 201,
+      "exact_original_copies": 201,
+      "near_original_train": 0,
+      "near_original_validation": 0,
+      "near_original_test": 0,
+      "near_original_ambiguous": 0,
+      "unmatched_or_low_similarity": 0,
+      "kept_for_training": 0
+    },
+    "Red_Soil": {
+      "augmentation_images": 1126,
+      "exact_original_copies": 109,
+      "near_original_train": 1,
+      "near_original_validation": 0,
+      "near_original_test": 0,
+      "near_original_ambiguous": 0,
+      "unmatched_or_low_similarity": 1016,
+      "kept_for_training": 1
+    },
+    "Yellow_Soil": {
+      "augmentation_images": 1401,
+      "exact_original_copies": 69,
+      "near_original_train": 0,
+      "near_original_validation": 0,
+      "near_original_test": 0,
+      "near_original_ambiguous": 0,
+      "unmatched_or_low_similarity": 1332,
+      "kept_for_training": 0
+    }
+  },
+  "original_split": {
+    "train": 829,
+    "validation": 178,
+    "test": 182
+  },
+  "kept_images": 2,
+  "kept_paths": [
+    "data\\raw\\soil_classification_nc\\cyaug_source\\Black_Soil\\b (1567).jpeg",
+    "data\\raw\\soil_classification_nc\\cyaug_source\\Red_Soil\\r (409).jpeg"
+  ]
+}

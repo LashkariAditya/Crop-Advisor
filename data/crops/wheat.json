@@ -1,0 +1,19 @@
+{
+  "crop": "Wheat (HD 3086 reference package)",
+  "region": "Timely-sown irrigated conditions in the states and districts listed by the source; not a pan-India prescription",
+  "estimate": false,
+  "stages": [
+    {"stage":"Land preparation","guidance":"The cited package recommends a flat fertile field, pre-sowing irrigation, then ploughing and leveling at suitable field moisture."},
+    {"stage":"Seed selection","guidance":"HD 3086 is the variety covered by this source; choose varieties recommended for your state and season from the local agriculture department."},
+    {"stage":"Seed treatment","guidance":"The cited package lists Vitavax at 2 g/kg seed for this variety. Check current registrations and local advisories before use."},
+    {"stage":"Sowing","guidance":"The cited package specifies November 10–20 and 100 kg seed/ha for timely-sown irrigated northern conditions. Do not generalize this date outside that region."},
+    {"stage":"Irrigation and nutrients","guidance":"Use local soil-test based fertilizer and irrigation recommendations; the cited source page does not provide a complete universal schedule."},
+    {"stage":"Pests and diseases","guidance":"Scout fields and use state/KVK integrated pest management guidance. Avoid applying pesticides without a confirmed diagnosis and current label directions."},
+    {"stage":"Harvest and storage","guidance":"Harvest at physiological maturity, dry grain to safe storage moisture, and protect from moisture and pests according to local extension advice."},
+    {"stage":"Selling","guidance":"Check local mandi prices, procurement access, quality rules, and the current MSP notification before sale."}
+  ],
+  "products": [],
+  "rotation_suggestion":"Choose rotation according to water availability, soil health and local cropping system advice.",
+  "sources": [{"title":"ICAR package of practices for bread-wheat variety HD 3086","url":"https://www.icar.gov.in/sites/default/files/Circulars/TESTINGCROPVARIETIESFG-2016_2.pdf","accessed":"2026-11-07"}],
+  "disclaimer":"Verify every practice with your local agriculture office or KVK before use. This is a variety-specific regional reference."
+}

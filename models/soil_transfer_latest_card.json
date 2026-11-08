@@ -1,0 +1,277 @@
+{
+  "name": "soil_photo_resnet18_transfer",
+  "task": "soil",
+  "source_license": "CC BY-NC 4.0 repository; underlying photo provenance may vary; research/education only pending rights review.",
+  "trained_from_scratch": false,
+  "pretrained_weights": "torchvision ResNet18 ImageNet1K_V1",
+  "device": "cpu",
+  "dataset": "D:\\CropAdvisor\\data\\raw\\soil_classification_nc\\Orignal-Dataset",
+  "classes": [
+    "Alluvial_Soil",
+    "Arid_Soil",
+    "Black_Soil",
+    "Laterite_Soil",
+    "Mountain_Soil",
+    "Red_Soil",
+    "Yellow_Soil"
+  ],
+  "split": {
+    "method": "stratified random file split, seed 7",
+    "train": 829,
+    "validation": 178,
+    "test": 182
+  },
+  "epochs_requested": 18,
+  "epochs_trained": 18,
+  "best_validation_epoch": 14,
+  "validation_selection": "macro-F1, with accuracy as tie-breaker",
+  "validation_metrics": {
+    "accuracy": 0.8820224719101124,
+    "macro_f1": 0.850012477685498,
+    "per_class": [
+      {
+        "precision": 0.6,
+        "recall": 0.75,
+        "f1": 0.6666666666666665,
+        "support": 8
+      },
+      {
+        "precision": 0.8974358974358975,
+        "recall": 0.813953488372093,
+        "f1": 0.8536585365853658,
+        "support": 43
+      },
+      {
+        "precision": 0.8837209302325582,
+        "recall": 1.0,
+        "f1": 0.9382716049382717,
+        "support": 38
+      },
+      {
+        "precision": 0.8857142857142857,
+        "recall": 0.9393939393939394,
+        "f1": 0.9117647058823529,
+        "support": 33
+      },
+      {
+        "precision": 0.9615384615384616,
+        "recall": 0.8333333333333334,
+        "f1": 0.8928571428571429,
+        "support": 30
+      },
+      {
+        "precision": 0.8823529411764706,
+        "recall": 0.9375,
+        "f1": 0.9090909090909091,
+        "support": 16
+      },
+      {
+        "precision": 0.875,
+        "recall": 0.7,
+        "f1": 0.7777777777777777,
+        "support": 10
+      }
+    ]
+  },
+  "test_metrics": {
+    "accuracy": 0.8901098901098901,
+    "macro_f1": 0.8540604962442666,
+    "per_class": [
+      {
+        "precision": 0.5,
+        "recall": 0.5,
+        "f1": 0.5,
+        "support": 8
+      },
+      {
+        "precision": 0.8636363636363636,
+        "recall": 0.8837209302325582,
+        "f1": 0.8735632183908046,
+        "support": 43
+      },
+      {
+        "precision": 0.8863636363636364,
+        "recall": 1.0,
+        "f1": 0.9397590361445783,
+        "support": 39
+      },
+      {
+        "precision": 1.0,
+        "recall": 0.7878787878787878,
+        "f1": 0.8813559322033898,
+        "support": 33
+      },
+      {
+        "precision": 0.9032258064516129,
+        "recall": 0.9032258064516129,
+        "f1": 0.9032258064516129,
+        "support": 31
+      },
+      {
+        "precision": 0.9444444444444444,
+        "recall": 1.0,
+        "f1": 0.9714285714285714,
+        "support": 17
+      },
+      {
+        "precision": 0.9090909090909091,
+        "recall": 0.9090909090909091,
+        "f1": 0.9090909090909091,
+        "support": 11
+      }
+    ]
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 1.8451920415581495,
+      "train_accuracy": 0.2750301568154403,
+      "validation_loss": 1.6911078195893363,
+      "validation_accuracy": 0.4157303370786517,
+      "validation_macro_f1": 0.3268919712437043
+    },
+    {
+      "epoch": 2,
+      "train_loss": 1.466230806165495,
+      "train_accuracy": 0.548854041013269,
+      "validation_loss": 1.4000070778171667,
+      "validation_accuracy": 0.5955056179775281,
+      "validation_macro_f1": 0.4883219954648526
+    },
+    {
+      "epoch": 3,
+      "train_loss": 1.2429215360176722,
+      "train_accuracy": 0.6803377563329313,
+      "validation_loss": 1.21620152371653,
+      "validation_accuracy": 0.6348314606741573,
+      "validation_macro_f1": 0.5433387964371642
+    },
+    {
+      "epoch": 4,
+      "train_loss": 1.0146051588478364,
+      "train_accuracy": 0.7551266586248492,
+      "validation_loss": 0.9477727098411388,
+      "validation_accuracy": 0.7696629213483146,
+      "validation_macro_f1": 0.6837299487531625
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.8164953326287402,
+      "train_accuracy": 0.7961399276236429,
+      "validation_loss": 0.8044431752033447,
+      "validation_accuracy": 0.797752808988764,
+      "validation_macro_f1": 0.7367453506014902
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.6990414206455355,
+      "train_accuracy": 0.8154402895054282,
+      "validation_loss": 0.6799723020430362,
+      "validation_accuracy": 0.8539325842696629,
+      "validation_macro_f1": 0.7837151381845586
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.5936909479025045,
+      "train_accuracy": 0.8359469240048251,
+      "validation_loss": 0.6143243476915895,
+      "validation_accuracy": 0.8595505617977528,
+      "validation_macro_f1": 0.7937656697336288
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.532118373742581,
+      "train_accuracy": 0.841978287092883,
+      "validation_loss": 0.5406219811921709,
+      "validation_accuracy": 0.848314606741573,
+      "validation_macro_f1": 0.8044549515617236
+    },
+    {
+      "epoch": 9,
+      "train_loss": 0.47482452752794374,
+      "train_accuracy": 0.8407720144752714,
+      "validation_loss": 0.5221070384376505,
+      "validation_accuracy": 0.8202247191011236,
+      "validation_macro_f1": 0.7665307598805136
+    },
+    {
+      "epoch": 10,
+      "train_loss": 0.469226226228569,
+      "train_accuracy": 0.8709288299155609,
+      "validation_loss": 0.47295291202791623,
+      "validation_accuracy": 0.848314606741573,
+      "validation_macro_f1": 0.7893129403660198
+    },
+    {
+      "epoch": 11,
+      "train_loss": 0.40770712843562495,
+      "train_accuracy": 0.8745476477683957,
+      "validation_loss": 0.4575726049167387,
+      "validation_accuracy": 0.8707865168539326,
+      "validation_macro_f1": 0.8282299333092072
+    },
+    {
+      "epoch": 12,
+      "train_loss": 0.4458028321998111,
+      "train_accuracy": 0.8588661037394452,
+      "validation_loss": 0.4383167724930838,
+      "validation_accuracy": 0.8651685393258427,
+      "validation_macro_f1": 0.8184001640809418
+    },
+    {
+      "epoch": 13,
+      "train_loss": 0.38050632671294654,
+      "train_accuracy": 0.8866103739445115,
+      "validation_loss": 0.41791277429026163,
+      "validation_accuracy": 0.8595505617977528,
+      "validation_macro_f1": 0.8153448874892045
+    },
+    {
+      "epoch": 14,
+      "train_loss": 0.3710118653690858,
+      "train_accuracy": 0.8866103739445115,
+      "validation_loss": 0.45141864400566295,
+      "validation_accuracy": 0.8820224719101124,
+      "validation_macro_f1": 0.8437677297639702
+    },
+    {
+      "epoch": 15,
+      "train_loss": 0.36356634782364344,
+      "train_accuracy": 0.8829915560916767,
+      "validation_loss": 0.440339915747388,
+      "validation_accuracy": 0.8651685393258427,
+      "validation_macro_f1": 0.8285773958706288
+    },
+    {
+      "epoch": 16,
+      "train_loss": 0.33707636625329607,
+      "train_accuracy": 0.887816646562123,
+      "validation_loss": 0.44046298799554956,
+      "validation_accuracy": 0.8595505617977528,
+      "validation_macro_f1": 0.8185102686458533
+    },
+    {
+      "epoch": 17,
+      "train_loss": 0.3395371387462133,
+      "train_accuracy": 0.8986731001206273,
+      "validation_loss": 0.407986404416099,
+      "validation_accuracy": 0.8707865168539326,
+      "validation_macro_f1": 0.8332051480879432
+    },
+    {
+      "epoch": 18,
+      "train_loss": 0.3163067739281637,
+      "train_accuracy": 0.902291917973462,
+      "validation_loss": 0.42442453054062435,
+      "validation_accuracy": 0.8707865168539326,
+      "validation_macro_f1": 0.830357142857143
+    }
+  ],
+  "warning": "Small imbalanced dataset; random file split may contain related acquisition contexts across partitions. Not field-validated. Flip-averaging result reuses a test split previously scored without averaging; treat as exploratory and confirm on a fresh external dataset.",
+  "test_metrics_without_tta": {
+    "accuracy": 0.8846153846153846,
+    "macro_f1": 0.8228615083381933
+  },
+  "inference_augmentation": "four deterministic horizontal/vertical flip views; mean softmax probabilities",
+  "exploratory_test_reuse": true
+}

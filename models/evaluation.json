@@ -1,0 +1,703 @@
+{
+  "model_cards": [
+    {
+      "card": "crop_latest_card.json",
+      "name": "crop",
+      "task": null,
+      "data": "data\\raw\\crop_recommendation_kaggle\\Crop_recommendation.csv",
+      "date": "2026-11-08",
+      "split": {
+        "train": 1540,
+        "validation": 330,
+        "test": 330,
+        "method": "stratified random",
+        "train_date_max": null,
+        "validation_date_min": null,
+        "validation_date_max": null,
+        "test_date_min": null
+      },
+      "features": [
+        "N",
+        "P",
+        "K",
+        "temperature",
+        "humidity",
+        "ph",
+        "rainfall"
+      ],
+      "target_units": null,
+      "validation_metrics": {
+        "accuracy": 0.9787878787878788,
+        "macro_precision": 0.9813948306595365,
+        "macro_recall": 0.9787878787878789,
+        "macro_f1": 0.9786622536489813,
+        "per_class": {
+          "apple": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "banana": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "blackgram": {
+            "precision": 1.0,
+            "recall": 0.9333333333333333,
+            "f1": 0.9655172413793104
+          },
+          "chickpea": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "coconut": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "coffee": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "cotton": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "grapes": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "jute": {
+            "precision": 0.8333333333333334,
+            "recall": 1.0,
+            "f1": 0.9090909090909091
+          },
+          "kidneybeans": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "lentil": {
+            "precision": 0.8823529411764706,
+            "recall": 1.0,
+            "f1": 0.9375
+          },
+          "maize": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "mango": {
+            "precision": 0.9375,
+            "recall": 1.0,
+            "f1": 0.967741935483871
+          },
+          "mothbeans": {
+            "precision": 1.0,
+            "recall": 0.8666666666666667,
+            "f1": 0.9285714285714286
+          },
+          "mungbean": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "muskmelon": {
+            "precision": 0.9375,
+            "recall": 1.0,
+            "f1": 0.967741935483871
+          },
+          "orange": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "papaya": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "pigeonpeas": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "pomegranate": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "rice": {
+            "precision": 1.0,
+            "recall": 0.8,
+            "f1": 0.888888888888889
+          },
+          "watermelon": {
+            "precision": 1.0,
+            "recall": 0.9333333333333333,
+            "f1": 0.9655172413793104
+          }
+        }
+      },
+      "test_metrics": {
+        "accuracy": 0.9818181818181818,
+        "macro_precision": 0.9847488038277512,
+        "macro_recall": 0.9818181818181819,
+        "macro_f1": 0.9815920518662128,
+        "per_class": {
+          "apple": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "banana": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "blackgram": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "chickpea": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "coconut": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "coffee": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "cotton": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "grapes": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "jute": {
+            "precision": 0.7894736842105263,
+            "recall": 1.0,
+            "f1": 0.8823529411764706
+          },
+          "kidneybeans": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "lentil": {
+            "precision": 0.9375,
+            "recall": 1.0,
+            "f1": 0.967741935483871
+          },
+          "maize": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "mango": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "mothbeans": {
+            "precision": 1.0,
+            "recall": 0.9333333333333333,
+            "f1": 0.9655172413793104
+          },
+          "mungbean": {
+            "precision": 0.9375,
+            "recall": 1.0,
+            "f1": 0.967741935483871
+          },
+          "muskmelon": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "orange": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "papaya": {
+            "precision": 1.0,
+            "recall": 0.9333333333333333,
+            "f1": 0.9655172413793104
+          },
+          "pigeonpeas": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "pomegranate": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "rice": {
+            "precision": 1.0,
+            "recall": 0.7333333333333333,
+            "f1": 0.846153846153846
+          },
+          "watermelon": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          }
+        }
+      },
+      "persistence_baseline_test_metrics": null,
+      "validation_selected_predictor": null,
+      "warning": "Check the source, units, regional coverage, and dataset license before using predictions."
+    },
+    {
+      "card": "image_latest_card.json",
+      "name": "soil_photo_cnn",
+      "task": "soil",
+      "data": "data\\raw\\soil_classification_nc\\Orignal-Dataset",
+      "date": "2026-11-08",
+      "split": {
+        "train": 829,
+        "validation": 178,
+        "test": 182
+      },
+      "features": null,
+      "target_units": null,
+      "validation_metrics": {
+        "accuracy": 0.7808988764044944,
+        "per_class": [
+          {
+            "precision": 1.0,
+            "recall": 0.125,
+            "f1": 0.2222222222222222
+          },
+          {
+            "precision": 0.7,
+            "recall": 0.6511627906976745,
+            "f1": 0.674698795180723
+          },
+          {
+            "precision": 0.925,
+            "recall": 0.9736842105263158,
+            "f1": 0.9487179487179489
+          },
+          {
+            "precision": 0.6341463414634146,
+            "recall": 0.7878787878787878,
+            "f1": 0.7027027027027027
+          },
+          {
+            "precision": 0.88,
+            "recall": 0.7333333333333333,
+            "f1": 0.8
+          },
+          {
+            "precision": 0.8333333333333334,
+            "recall": 0.9375,
+            "f1": 0.8823529411764706
+          },
+          {
+            "precision": 0.7692307692307693,
+            "recall": 1.0,
+            "f1": 0.8695652173913044
+          }
+        ]
+      },
+      "test_metrics": {
+        "accuracy": 0.7692307692307693,
+        "per_class": [
+          {
+            "precision": 0.4,
+            "recall": 0.25,
+            "f1": 0.3076923076923077
+          },
+          {
+            "precision": 0.6666666666666666,
+            "recall": 0.6976744186046512,
+            "f1": 0.6818181818181818
+          },
+          {
+            "precision": 1.0,
+            "recall": 0.9230769230769231,
+            "f1": 0.9600000000000001
+          },
+          {
+            "precision": 0.6944444444444444,
+            "recall": 0.7575757575757576,
+            "f1": 0.7246376811594203
+          },
+          {
+            "precision": 0.7142857142857143,
+            "recall": 0.8064516129032258,
+            "f1": 0.7575757575757576
+          },
+          {
+            "precision": 0.8235294117647058,
+            "recall": 0.8235294117647058,
+            "f1": 0.8235294117647058
+          },
+          {
+            "precision": 1.0,
+            "recall": 0.7272727272727273,
+            "f1": 0.8421052631578948
+          }
+        ]
+      },
+      "persistence_baseline_test_metrics": null,
+      "validation_selected_predictor": null,
+      "warning": "Verify the dataset license, image context, regional coverage and class labels before field use."
+    },
+    {
+      "card": "soil_transfer_latest_card.json",
+      "name": "soil_photo_resnet18_transfer",
+      "task": "soil",
+      "data": "D:\\CropAdvisor\\data\\raw\\soil_classification_nc\\Orignal-Dataset",
+      "date": null,
+      "split": {
+        "method": "stratified random file split, seed 7",
+        "train": 829,
+        "validation": 178,
+        "test": 182
+      },
+      "features": null,
+      "target_units": null,
+      "validation_metrics": {
+        "accuracy": 0.8820224719101124,
+        "macro_f1": 0.850012477685498
+      },
+      "test_metrics": {
+        "accuracy": 0.8901098901098901,
+        "macro_f1": 0.8540604962442666
+      },
+      "persistence_baseline_test_metrics": null,
+      "validation_selected_predictor": null,
+      "warning": "Small imbalanced dataset; random file split may contain related acquisition contexts across partitions. Not field-validated. Flip-averaging result reuses a test split previously scored without averaging; treat as exploratory and confirm on a fresh external dataset."
+    },
+    {
+      "card": "soil_core_latest_card.json",
+      "name": "soil_core_fraction_resnet18",
+      "task": "geotechnical soil-core main fraction",
+      "data": null,
+      "date": null,
+      "split": {
+        "train": 2310,
+        "validation": 504,
+        "test": 609
+      },
+      "features": null,
+      "target_units": null,
+      "validation_metrics": {
+        "accuracy": 0.6825396825396826,
+        "macro_f1": 0.5986046121714619,
+        "per_class": {
+          "fS": {
+            "precision": 0.8825757575757576,
+            "recall": 0.7516129032258064,
+            "f1": 0.8118466898954703,
+            "support": 310
+          },
+          "mS": {
+            "precision": 0.38461538461538464,
+            "recall": 0.3,
+            "f1": 0.33707865168539325,
+            "support": 100
+          },
+          "U": {
+            "precision": 0.48214285714285715,
+            "recall": 0.75,
+            "f1": 0.5869565217391304,
+            "support": 36
+          },
+          "gS": {
+            "precision": 0.5094339622641509,
+            "recall": 0.9310344827586207,
+            "f1": 0.6585365853658537,
+            "support": 58
+          }
+        }
+      },
+      "test_metrics": {
+        "accuracy": 0.6945812807881774,
+        "macro_f1": 0.5545032159427705,
+        "per_class": {
+          "fS": {
+            "precision": 0.6464646464646465,
+            "recall": 0.8135593220338984,
+            "f1": 0.7204502814258913,
+            "support": 236
+          },
+          "mS": {
+            "precision": 0.7632850241545893,
+            "recall": 0.6245059288537549,
+            "f1": 0.6869565217391305,
+            "support": 253
+          },
+          "U": {
+            "precision": 0.75,
+            "recall": 0.75,
+            "f1": 0.75,
+            "support": 96
+          },
+          "gS": {
+            "precision": 0.1111111111111111,
+            "recall": 0.041666666666666664,
+            "f1": 0.06060606060606061,
+            "support": 24
+          }
+        }
+      },
+      "persistence_baseline_test_metrics": null,
+      "validation_selected_predictor": null,
+      "warning": "This predicts geotechnical core fractions, not agricultural soil types; do not use as the CropAdvisor field-soil classifier."
+    },
+    {
+      "card": "landcover_latest_card.json",
+      "name": "eurosat_landcover_cnn",
+      "task": "landcover",
+      "data": "data\\raw\\eurosat_rgb\\EuroSAT_RGB",
+      "date": "2026-11-08",
+      "split": {
+        "train": 18900,
+        "validation": 4050,
+        "test": 4050
+      },
+      "features": null,
+      "target_units": null,
+      "validation_metrics": {
+        "accuracy": 0.702962962962963,
+        "per_class": [
+          {
+            "precision": 0.8254716981132075,
+            "recall": 0.7777777777777778,
+            "f1": 0.8009153318077803
+          },
+          {
+            "precision": 0.8914027149321267,
+            "recall": 0.8755555555555555,
+            "f1": 0.883408071748879
+          },
+          {
+            "precision": 0.7020648967551623,
+            "recall": 0.5288888888888889,
+            "f1": 0.603295310519645
+          },
+          {
+            "precision": 0.4540229885057471,
+            "recall": 0.42133333333333334,
+            "f1": 0.43706777316735823
+          },
+          {
+            "precision": 0.7684729064039408,
+            "recall": 0.832,
+            "f1": 0.7989756722151089
+          },
+          {
+            "precision": 0.6272727272727273,
+            "recall": 0.69,
+            "f1": 0.6571428571428571
+          },
+          {
+            "precision": 0.5035294117647059,
+            "recall": 0.5706666666666667,
+            "f1": 0.5349999999999999
+          },
+          {
+            "precision": 0.7139959432048681,
+            "recall": 0.7822222222222223,
+            "f1": 0.7465535524920466
+          },
+          {
+            "precision": 0.5226130653266332,
+            "recall": 0.5546666666666666,
+            "f1": 0.538163001293661
+          },
+          {
+            "precision": 0.9303370786516854,
+            "recall": 0.92,
+            "f1": 0.9251396648044694
+          }
+        ]
+      },
+      "test_metrics": {
+        "accuracy": 0.7130864197530864,
+        "per_class": [
+          {
+            "precision": 0.813953488372093,
+            "recall": 0.7777777777777778,
+            "f1": 0.7954545454545455
+          },
+          {
+            "precision": 0.9251207729468599,
+            "recall": 0.8511111111111112,
+            "f1": 0.8865740740740742
+          },
+          {
+            "precision": 0.7103658536585366,
+            "recall": 0.5177777777777778,
+            "f1": 0.5989717223650385
+          },
+          {
+            "precision": 0.48985507246376814,
+            "recall": 0.45066666666666666,
+            "f1": 0.46944444444444444
+          },
+          {
+            "precision": 0.8143564356435643,
+            "recall": 0.8773333333333333,
+            "f1": 0.8446726572528883
+          },
+          {
+            "precision": 0.6137071651090342,
+            "recall": 0.6566666666666666,
+            "f1": 0.6344605475040257
+          },
+          {
+            "precision": 0.51338199513382,
+            "recall": 0.5626666666666666,
+            "f1": 0.5368956743002545
+          },
+          {
+            "precision": 0.6965648854961832,
+            "recall": 0.8111111111111111,
+            "f1": 0.7494866529774128
+          },
+          {
+            "precision": 0.5581947743467933,
+            "recall": 0.6266666666666667,
+            "f1": 0.5904522613065326
+          },
+          {
+            "precision": 0.9203539823008849,
+            "recall": 0.9244444444444444,
+            "f1": 0.9223946784922394
+          }
+        ]
+      },
+      "persistence_baseline_test_metrics": null,
+      "validation_selected_predictor": null,
+      "warning": "EuroSAT outputs apply only to satellite land-cover imagery; they are not soil type, moisture or vegetation measurements."
+    },
+    {
+      "card": "yield_latest_card.json",
+      "name": "yield",
+      "task": null,
+      "data": "data\\processed\\faostat_india_yield_forecast.csv",
+      "date": "2026-11-08",
+      "split": {
+        "train": 588,
+        "validation": 126,
+        "test": 140,
+        "method": "chronological by date",
+        "train_date_max": "2005-12-31T00:00:00.000000",
+        "validation_date_min": "2006-12-31T00:00:00.000000",
+        "validation_date_max": "2014-12-31T00:00:00.000000",
+        "test_date_min": "2015-12-31T00:00:00.000000"
+      },
+      "features": [
+        "Year",
+        "yield_lag_1",
+        "yield_lag_2",
+        "yield_lag_3",
+        "item__rice",
+        "item__wheat",
+        "item__maize_corn",
+        "item__millet",
+        "item__sorghum",
+        "item__chick_peas_dry",
+        "item__lentils_dry",
+        "item__soya_beans",
+        "item__groundnuts_excluding_shelled",
+        "item__potatoes",
+        "item__sugar_cane",
+        "item__bananas",
+        "item__onions_and_shallots_dry_excluding_dehydrated",
+        "item__tomatoes"
+      ],
+      "target_units": "FAOSTAT national annual yield, kg/ha",
+      "validation_metrics": {
+        "mae": 1139.2213489619558,
+        "rmse": 1529.5535997200445,
+        "mape_pct": 40.70130679040489
+      },
+      "test_metrics": {
+        "mae": 1871.3731133731394,
+        "rmse": 2520.446003505526,
+        "mape_pct": 67.48929944692335
+      },
+      "persistence_baseline_test_metrics": {
+        "mae": 529.3478571428574,
+        "rmse": 1257.6965352523296,
+        "mape_pct": 6.515570004607052
+      },
+      "validation_selected_predictor": "persistence",
+      "warning": "Check the source, units, regional coverage, and dataset license before using predictions."
+    },
+    {
+      "card": "price_latest_card.json",
+      "name": "price",
+      "task": null,
+      "data": "data\\processed\\faostat_india_price_index_forecast.csv",
+      "date": "2026-11-08",
+      "split": {
+        "train": 176,
+        "validation": 40,
+        "test": 40,
+        "method": "chronological by date",
+        "train_date_max": "2015-12-31T00:00:00.000000",
+        "validation_date_min": "2016-12-31T00:00:00.000000",
+        "validation_date_max": "2020-12-31T00:00:00.000000",
+        "test_date_min": "2021-12-31T00:00:00.000000"
+      },
+      "features": [
+        "item__rice",
+        "item__wheat",
+        "item__maize_corn",
+        "item__sorghum",
+        "item__millet",
+        "item__barley",
+        "item__chick_peas_dry",
+        "item__groundnuts_excluding_shelled",
+        "month",
+        "year",
+        "month_sin",
+        "month_cos",
+        "price_lag_2",
+        "price_lag_3"
+      ],
+      "target_units": "FAOSTAT annual producer price index (2014-2016=100); not INR/kg",
+      "validation_metrics": {
+        "mae": 4.8768162991888016,
+        "rmse": 5.9517452797435615,
+        "mape_pct": 4.330746247288185
+      },
+      "test_metrics": {
+        "mae": 16.776821763832295,
+        "rmse": 19.642319325344648,
+        "mape_pct": 11.288708909465747
+      },
+      "persistence_baseline_test_metrics": {
+        "mae": 9.348999999999998,
+        "rmse": 10.978899990436199,
+        "mape_pct": 6.588986576423523
+      },
+      "validation_selected_predictor": "persistence",
+      "warning": "Check the source, units, regional coverage, and dataset license before using predictions."
+    }
+  ]
+}

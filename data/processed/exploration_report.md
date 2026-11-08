@@ -1,0 +1,15 @@
+# Data exploration report
+
+Generated from downloaded, licensed source archives; figures are descriptive only. No dataset was used to train a model in this report.
+
+## faostat_india_crop_production
+
+- Details: `{"rows": 10009, "columns": ["Area", "Item", "Year", "area_ha", "production_kg", "yield_kg_per_ha", "source_flags"], "missing_values": {"Area": 0, "Item": 0, "Year": 0, "area_ha": 4211, "production_kg": 0, "yield_kg_per_ha": 4221, "source_flags": 0}, "items": 171, "year_min": 1961, "year_max": 2024, "item_row_counts_top_30": {"Anise, badian, coriander, cumin, caraway, fennel and juniper berries, raw": 64, "Apples": 64, "Apricots": 64, "Areca nuts": 64, "Bananas": 64, "Barley": 64, "Beans, dry": 64, "Beef and Buffalo Meat, primary": 64, "Beeswax": 64, "Buffalo fat, unrendered": 64, "Cabbages": 64, "Cantaloupes and other melons": 64, "Carrots and turnips": 64, "Cashew nuts, in shell": 64, "Cassava, fresh": 64, "Castor oil seeds": 64, "Cauliflowers and broccoli": 64, "Cereals, primary": 64, "Cherries": 64, "Chick peas, dry": 64, "Chillies and peppers, dry (Capsicum spp., Pimenta spp.), raw": 64, "Chillies and peppers, green (Capsicum spp. and Pimenta spp.)": 64, "Citrus Fruit, Total": 64, "Cocoa beans": 64, "Coconuts, in shell": 64, "Coffee, green": 64, "Coir, raw": 64, "Cucumbers and gherkins": 64, "Edible offal of buffalo, fresh, chilled or frozen": 64, "Edible offal of goat, fresh, chilled or frozen": 64}}`
+
+## faostat_india_producer_prices
+
+- Details: `{"rows": 4270, "columns": ["Area", "Item", "Year", "Producer Price (LCU/tonne)", "Producer Price (SLC/tonne)", "Producer Price (USD/tonne)", "Producer Price Index (2014-2016 = 100)", "source_flags"], "missing_values": {"Area": 0, "Item": 0, "Year": 0, "Producer Price (LCU/tonne)": 3805, "Producer Price (SLC/tonne)": 3805, "Producer Price (USD/tonne)": 3805, "Producer Price Index (2014-2016 = 100)": 0, "source_flags": 0}, "items": 122, "year_min": 1991, "year_max": 2025, "item_row_counts_top_30": {"Agriculture": 35, "Anise, badian, coriander, cumin, caraway, fennel and juniper berries, raw": 35, "Apples": 35, "Apricots": 35, "Areca nuts": 35, "Bananas": 35, "Barley": 35, "Beans, dry": 35, "Cabbages": 35, "Cantaloupes and other melons": 35, "Carrots and turnips": 35, "Cashew nuts, in shell": 35, "Cassava, fresh": 35, "Castor oil seeds": 35, "Cauliflowers and broccoli": 35, "Cereals, primary": 35, "Cherries": 35, "Chick peas, dry": 35, "Chillies and peppers, dry (Capsicum spp., Pimenta spp.), raw": 35, "Chillies and peppers, green (Capsicum spp. and Pimenta spp.)": 35, "Citrus Fruit, Total": 35, "Coarse Grain, Total": 35, "Cocoa beans": 35, "Coconuts, in shell": 35, "Coffee, green": 35, "Cotton lint, ginned": 35, "Cotton seed": 35, "Cucumbers and gherkins": 35, "Eggplants (aubergines)": 35, "Eggs Primary": 35}}`
+
+## eurosat_rgb
+
+- Details: `{"classes": {"AnnualCrop": 3000, "Forest": 3000, "HerbaceousVegetation": 3000, "Highway": 2500, "Industrial": 2500, "Pasture": 2000, "PermanentCrop": 2500, "Residential": 3000, "River": 2500, "SeaLake": 3000}}`

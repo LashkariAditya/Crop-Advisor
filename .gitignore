@@ -3,6 +3,16 @@
 __pycache__/
 *.py[cod]
 .pytest_cache/
+frontend/node_modules/
+frontend/dist/
+node_modules/
+dist/
+logs/
 data/raw/**
 !data/raw/.gitkeep
-models/**/*.npz
+!data/raw/MANIFEST.json
+models/*.npz
+!models/crop_latest.npz
+!models/landcover_latest.npz
+
+models/*.pt

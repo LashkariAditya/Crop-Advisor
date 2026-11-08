@@ -1,0 +1,149 @@
+{
+  "selection": "validation macro-F1, accuracy tie-breaker",
+  "tta_selected": true,
+  "validation_without_tta": {
+    "accuracy": 0.8820224719101124,
+    "macro_f1": 0.8437677297639702,
+    "per_class": [
+      {
+        "precision": 0.5454545454545454,
+        "recall": 0.75,
+        "f1": 0.631578947368421,
+        "support": 8
+      },
+      {
+        "precision": 0.9024390243902439,
+        "recall": 0.8604651162790697,
+        "f1": 0.8809523809523809,
+        "support": 43
+      },
+      {
+        "precision": 0.9047619047619048,
+        "recall": 1.0,
+        "f1": 0.9500000000000001,
+        "support": 38
+      },
+      {
+        "precision": 0.90625,
+        "recall": 0.8787878787878788,
+        "f1": 0.8923076923076922,
+        "support": 33
+      },
+      {
+        "precision": 0.9259259259259259,
+        "recall": 0.8333333333333334,
+        "f1": 0.8771929824561403,
+        "support": 30
+      },
+      {
+        "precision": 0.9375,
+        "recall": 0.9375,
+        "f1": 0.9375,
+        "support": 16
+      },
+      {
+        "precision": 0.7777777777777778,
+        "recall": 0.7,
+        "f1": 0.7368421052631577,
+        "support": 10
+      }
+    ]
+  },
+  "validation_with_flip_tta": {
+    "accuracy": 0.8820224719101124,
+    "macro_f1": 0.850012477685498,
+    "per_class": [
+      {
+        "precision": 0.6,
+        "recall": 0.75,
+        "f1": 0.6666666666666665,
+        "support": 8
+      },
+      {
+        "precision": 0.8974358974358975,
+        "recall": 0.813953488372093,
+        "f1": 0.8536585365853658,
+        "support": 43
+      },
+      {
+        "precision": 0.8837209302325582,
+        "recall": 1.0,
+        "f1": 0.9382716049382717,
+        "support": 38
+      },
+      {
+        "precision": 0.8857142857142857,
+        "recall": 0.9393939393939394,
+        "f1": 0.9117647058823529,
+        "support": 33
+      },
+      {
+        "precision": 0.9615384615384616,
+        "recall": 0.8333333333333334,
+        "f1": 0.8928571428571429,
+        "support": 30
+      },
+      {
+        "precision": 0.8823529411764706,
+        "recall": 0.9375,
+        "f1": 0.9090909090909091,
+        "support": 16
+      },
+      {
+        "precision": 0.875,
+        "recall": 0.7,
+        "f1": 0.7777777777777777,
+        "support": 10
+      }
+    ]
+  },
+  "test_selected_method": {
+    "accuracy": 0.8901098901098901,
+    "macro_f1": 0.8540604962442666,
+    "per_class": [
+      {
+        "precision": 0.5,
+        "recall": 0.5,
+        "f1": 0.5,
+        "support": 8
+      },
+      {
+        "precision": 0.8636363636363636,
+        "recall": 0.8837209302325582,
+        "f1": 0.8735632183908046,
+        "support": 43
+      },
+      {
+        "precision": 0.8863636363636364,
+        "recall": 1.0,
+        "f1": 0.9397590361445783,
+        "support": 39
+      },
+      {
+        "precision": 1.0,
+        "recall": 0.7878787878787878,
+        "f1": 0.8813559322033898,
+        "support": 33
+      },
+      {
+        "precision": 0.9032258064516129,
+        "recall": 0.9032258064516129,
+        "f1": 0.9032258064516129,
+        "support": 31
+      },
+      {
+        "precision": 0.9444444444444444,
+        "recall": 1.0,
+        "f1": 0.9714285714285714,
+        "support": 17
+      },
+      {
+        "precision": 0.9090909090909091,
+        "recall": 0.9090909090909091,
+        "f1": 0.9090909090909091,
+        "support": 11
+      }
+    ]
+  },
+  "note": "The test split was previously scored for the no-TTA checkpoint; this second comparison is exploratory."
+}

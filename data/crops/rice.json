@@ -1,0 +1,20 @@
+{
+  "crop": "Rice (modified SRI reference)",
+  "region": "Adapt to local state variety recommendations; source describes a specific modified SRI system",
+  "estimate": false,
+  "stages": [
+    {"stage":"Land preparation","guidance":"Use a level, well-drained field; prepare the seedbed and incorporate organic matter according to local soil test."},
+    {"stage":"Seed selection","guidance":"Select a locally recommended variety and quality seed from a certified source. The cited SRI technology uses 14-day-old seedlings."},
+    {"stage":"Sowing and transplanting","guidance":"The cited method transplants a single 14-day-old seedling at 20 cm × 20 cm spacing. Calendar dates vary by state and season."},
+    {"stage":"Irrigation","guidance":"The cited method irrigates three days after ponded water disappears through the growing season and stops irrigation 10–15 days before harvest."},
+    {"stage":"Nutrients","guidance":"The cited package used 5 t FYM/ha plus 80:40:40 kg/ha N:P2O5:K2O. Treat as a study-specific reference and confirm locally with a soil test."},
+    {"stage":"Weeds","guidance":"The cited method mechanically weeds at 10, 20 and 30 days after transplanting. Confirm suitability and labor needs locally."},
+    {"stage":"Pests and diseases","guidance":"Scout regularly and follow state agriculture/KVK integrated pest management advice; this source does not provide a universal pesticide schedule."},
+    {"stage":"Harvest and storage","guidance":"Harvest at locally recommended grain maturity; dry grain safely before storage and follow local moisture and food-safety guidance."},
+    {"stage":"Selling","guidance":"Check current local mandi prices and applicable MSP announcements before deciding when and where to sell."}
+  ],
+  "products": [],
+  "rotation_suggestion":"Consider a locally suitable pulse or oilseed rotation; verify water, season and market suitability.",
+  "sources": [{"title":"ICAR technology: Modified SRI method for enhancing water productivity of rice","url":"https://www.icar.gov.in/en/technology-modified-sri-method-enhancing-water-productivity-rice","accessed":"2026-11-07"}],
+  "disclaimer":"Verify every practice with your local agriculture office or KVK before use. This plan is a cited reference, not a location-specific prescription."
+}

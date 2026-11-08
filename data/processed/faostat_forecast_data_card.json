@@ -1,0 +1,57 @@
+{
+  "source": "FAOSTAT India annual production/yield and annual producer price index; see DATA_SOURCES.md",
+  "forecast_protocol": "One-step-ahead annual prediction. Sort by calendar year and hold out whole years; each feature row uses only prior-year target values.",
+  "yield": {
+    "rows": 854,
+    "items": [
+      "Bananas",
+      "Chick peas, dry",
+      "Groundnuts, excluding shelled",
+      "Lentils, dry",
+      "Maize (corn)",
+      "Millet",
+      "Onions and shallots, dry (excluding dehydrated)",
+      "Potatoes",
+      "Rice",
+      "Sorghum",
+      "Soya beans",
+      "Sugar cane",
+      "Tomatoes",
+      "Wheat"
+    ],
+    "year_min": 1964,
+    "year_max": 2024,
+    "target": "yield_kg_per_ha",
+    "features": [
+      "Year",
+      "yield_lag_1",
+      "yield_lag_2",
+      "yield_lag_3",
+      "item one-hot indicators"
+    ],
+    "baseline": "yield_lag_1 persistence"
+  },
+  "producer_price_index": {
+    "rows": 280,
+    "items": [
+      "Barley",
+      "Chick peas, dry",
+      "Groundnuts, excluding shelled",
+      "Maize (corn)",
+      "Millet",
+      "Rice",
+      "Sorghum",
+      "Wheat"
+    ],
+    "year_min": 1991,
+    "year_max": 2025,
+    "target": "producer_price_index",
+    "units": "index (2014-2016=100); not INR/kg and not mandi retail price",
+    "baseline": "price_lag_1 persistence"
+  },
+  "cautions": [
+    "These are national annual series and cannot be interpreted as field-level yield or local mandi price forecasts.",
+    "Producer-price index is a relative index, not a currency amount.",
+    "All predictions are one-step annual estimates using historical lagged values only."
+  ]
+}

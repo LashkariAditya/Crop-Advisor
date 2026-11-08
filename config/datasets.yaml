@@ -12,14 +12,46 @@ datasets:
   - name: faostat_crop_production
     url: https://bulks-faostat.fao.org/production/Production_Crops_Livestock_E_All_Data_(Normalized).zip
     type: zip
-    license: FAOSTAT terms; recheck before redistribution
+    license: CC BY 4.0 per FAO statistical database licensing policy; FAOSTAT terms apply
     destination: data/raw/faostat_crop_production
     expected_files: [Production_Crops_Livestock_E_All_Data_(Normalized).zip]
     enabled: true
   - name: faostat_producer_prices
     url: https://bulks-faostat.fao.org/production/Prices_E_All_Data_(Normalized).zip
     type: zip
-    license: FAOSTAT terms; recheck before redistribution
+    license: CC BY 4.0 per FAO statistical database licensing policy; FAOSTAT terms apply
     destination: data/raw/faostat_producer_prices
     expected_files: [Prices_E_All_Data_(Normalized).zip]
     enabled: true
+  - name: crop_recommendation_kaggle
+    url: https://www.kaggle.com/api/v1/datasets/download/atharvaingle/crop-recommendation-dataset
+    source_page: https://www.kaggle.com/datasets/atharvaingle/crop-recommendation-dataset
+    type: zip
+    archive_name: Crop_recommendation.zip
+    license: Apache 2.0 (Kaggle dataset metadata; checked 2026-11-08)
+    destination: data/raw/crop_recommendation_kaggle
+    expected_files: [Crop_recommendation.csv]
+    enabled: true
+    manual_steps: The public Kaggle archive endpoint can be downloaded without credentials. Check the Kaggle source page and dataset metadata if access changes.
+  - name: crop_production_india_kaggle
+    url: https://www.kaggle.com/api/v1/datasets/download/abhinand05/crop-production-in-india
+    source_page: https://www.kaggle.com/datasets/abhinand05/crop-production-in-india
+    type: kaggle
+    license: Kaggle dataset license and terms must be reviewed on dataset page before use
+    destination: data/raw/crop_production_india_kaggle
+    expected_files: [crop_production.csv]
+    enabled: false
+    license_verified: false
+    manual_steps: Create a Kaggle account and API token in root .env, review the dataset license and archive structure, set license_verified true and enabled true, then run make data. Record exact files, size, date, and checksum in DATA_SOURCES.md.
+  - name: soil_classification_nc
+    url: https://github.com/Phantom-fs/Soil-Classification-Dataset
+    tree_url: https://api.github.com/repos/Phantom-fs/Soil-Classification-Dataset/git/trees/c3108e9ea8277a2762b0aad587e90cc9722e63d4?recursive=1
+    raw_url: https://raw.githubusercontent.com/Phantom-fs/Soil-Classification-Dataset/c3108e9ea8277a2762b0aad587e90cc9722e63d4
+    type: github_tree
+    license: CC BY-NC 4.0 per repository LICENCE; research/education use only; cite the associated 2025 paper; source-image copyrights may vary
+    destination: data/raw/soil_classification_nc
+    include_prefix: Orignal-Dataset/
+    include_extra_files: [README.md, LICENCE]
+    expected_image_count: 1189
+    enabled: true
+    manual_steps: This source is restricted to non-commercial research and education. Only the 1,189 original images are downloaded; the CycleGAN-generated CyAUG images are excluded.

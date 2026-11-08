@@ -1,0 +1,12 @@
+currency: INR
+country: India
+mandi_prices:
+  provider: data.gov.in
+  resource_id_env: DATA_GOV_IN_MANDI_RESOURCE_ID
+  api_key_env: DATA_GOV_IN_API_KEY
+  cache_ttl_seconds: 1800
+  status: requires current resource ID and free API key
+mock_adapter:
+  enabled: true
+  label: MOCK demo catalog
+  prices_are_live: false

@@ -1,0 +1,40 @@
+# Documented defaults matching scripts/train_all.py; its CLI arguments are authoritative.
+seed: 7
+split: {train: 0.70, validation: 0.15, test: 0.15}
+early_stopping_patience: 15
+crop_model:
+  architecture: MLP (one ReLU hidden layer)
+  hidden_units: 16
+  epochs: 200
+  batch_size: 64
+  optimizer: Adam
+  learning_rate: 0.001
+image_model:
+  architecture: shallow NumPy CNN
+  image_width: 32
+  image_height: 32
+  convolution_filters: 8
+  kernel_size: 3
+  dense_hidden_units: 32
+  batch_size: 16
+  optimizer: Adam
+  learning_rate: 0.001
+  soil_epochs: 30
+  soil_augmentation_copies: 3
+  landcover_epochs: 12
+  landcover_augmentation_copies: 2
+yield_model:
+  architecture: MLP (32-unit ReLU hidden layer)
+  epochs: 200
+  batch_size: 64
+  optimizer: Adam
+  learning_rate: 0.001
+  split: chronological by complete year
+price_model:
+  architecture: MLP (32-unit ReLU hidden layer)
+  epochs: 200
+  batch_size: 64
+  optimizer: Adam
+  learning_rate: 0.001
+  lag_periods: 3
+  split: chronological by complete year

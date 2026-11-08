@@ -1,0 +1,117 @@
+[
+  {
+    "name": "eurosat_rgb",
+    "url": "configured in config/datasets.yaml",
+    "license": "MIT (project repo); Copernicus terms apply",
+    "destination": "data/raw/eurosat_rgb",
+    "downloaded_at_utc": "2026-11-07T12:55:14.345745+00:00",
+    "file_count": 27001,
+    "total_bytes": 186503081,
+    "archive_size_bytes": 94658721,
+    "archive_sha256": "b4f5b234ecb7d7ff9c6cddb046543b4717c53fd6e9815be6c0e80cc614f51b90",
+    "sample_files": [
+      "data\\raw\\eurosat_rgb\\EuroSAT_RGB.zip",
+      "data\\raw\\eurosat_rgb\\EuroSAT_RGB\\AnnualCrop\\AnnualCrop_1.jpg",
+      "data\\raw\\eurosat_rgb\\EuroSAT_RGB\\AnnualCrop\\AnnualCrop_10.jpg",
+      "data\\raw\\eurosat_rgb\\EuroSAT_RGB\\AnnualCrop\\AnnualCrop_100.jpg",
+      "data\\raw\\eurosat_rgb\\EuroSAT_RGB\\AnnualCrop\\AnnualCrop_1000.jpg",
+      "data\\raw\\eurosat_rgb\\EuroSAT_RGB\\AnnualCrop\\AnnualCrop_1001.jpg",
+      "data\\raw\\eurosat_rgb\\EuroSAT_RGB\\AnnualCrop\\AnnualCrop_1002.jpg",
+      "data\\raw\\eurosat_rgb\\EuroSAT_RGB\\AnnualCrop\\AnnualCrop_1003.jpg",
+      "data\\raw\\eurosat_rgb\\EuroSAT_RGB\\AnnualCrop\\AnnualCrop_1004.jpg",
+      "data\\raw\\eurosat_rgb\\EuroSAT_RGB\\AnnualCrop\\AnnualCrop_1005.jpg"
+    ]
+  },
+  {
+    "name": "faostat_crop_production",
+    "url": "configured in config/datasets.yaml",
+    "license": "CC BY 4.0 per FAO statistical database policy; FAOSTAT terms apply",
+    "destination": "data/raw/faostat_crop_production",
+    "downloaded_at_utc": "2026-11-07T12:55:51.867889+00:00",
+    "file_count": 6,
+    "total_bytes": 578944397,
+    "archive_size_bytes": 33921825,
+    "archive_sha256": "c5835418c18f9322e7decbd6800f93a216eaae3cdfa31acb08f0518c0c6d6853",
+    "sample_files": [
+      "data\\raw\\faostat_crop_production\\Production_Crops_Livestock_E_All_Data_(Normalized).csv",
+      "data\\raw\\faostat_crop_production\\Production_Crops_Livestock_E_All_Data_(Normalized).zip",
+      "data\\raw\\faostat_crop_production\\Production_Crops_Livestock_E_AreaCodes.csv",
+      "data\\raw\\faostat_crop_production\\Production_Crops_Livestock_E_Elements.csv",
+      "data\\raw\\faostat_crop_production\\Production_Crops_Livestock_E_Flags.csv",
+      "data\\raw\\faostat_crop_production\\Production_Crops_Livestock_E_ItemCodes.csv"
+    ]
+  },
+  {
+    "name": "faostat_producer_prices",
+    "url": "configured in config/datasets.yaml",
+    "license": "CC BY 4.0 per FAO statistical database policy; FAOSTAT terms apply",
+    "destination": "data/raw/faostat_producer_prices",
+    "downloaded_at_utc": "2026-11-07T12:56:11.158170+00:00",
+    "file_count": 6,
+    "total_bytes": 225985027,
+    "archive_size_bytes": 11684078,
+    "archive_sha256": "327f70a2230032d3966d6e9583ec5caf0e9416aa9fd91b444e02f6b8665c984d",
+    "sample_files": [
+      "data\\raw\\faostat_producer_prices\\Prices_E_All_Data_(Normalized).csv",
+      "data\\raw\\faostat_producer_prices\\Prices_E_All_Data_(Normalized).zip",
+      "data\\raw\\faostat_producer_prices\\Prices_E_AreaCodes.csv",
+      "data\\raw\\faostat_producer_prices\\Prices_E_Elements.csv",
+      "data\\raw\\faostat_producer_prices\\Prices_E_Flags.csv",
+      "data\\raw\\faostat_producer_prices\\Prices_E_ItemCodes.csv"
+    ]
+  },
+  {
+    "name": "crop_recommendation_kaggle",
+    "url": "https://www.kaggle.com/api/v1/datasets/download/atharvaingle/crop-recommendation-dataset",
+    "license": "Apache 2.0 (Kaggle dataset metadata; checked 2026-11-08)",
+    "destination": "data\\raw\\crop_recommendation_kaggle",
+    "downloaded_at_utc": "2026-11-08T06:24:23.585389+00:00",
+    "file_count": 2,
+    "total_bytes": 215268,
+    "archive_size_bytes": 65234,
+    "archive_sha256": "a98742b6f4ab802c9fbb9b24376f819534afb82f93567a39f979ad5c1c7efd75",
+    "sample_files": [
+      "data\\raw\\crop_recommendation_kaggle\\Crop_recommendation.csv",
+      "data\\raw\\crop_recommendation_kaggle\\Crop_recommendation.zip"
+    ]
+  },
+  {
+    "name": "soil_classification_nc",
+    "url": "https://github.com/Phantom-fs/Soil-Classification-Dataset",
+    "license": "CC BY-NC 4.0 per repository LICENCE; research/education use only; cite the associated 2025 paper; source-image copyrights may vary",
+    "destination": "data\\raw\\soil_classification_nc",
+    "downloaded_at_utc": "2026-11-08T06:51:15.034215+00:00",
+    "file_count": 1191,
+    "total_bytes": 237849178,
+    "source_commit": "c3108e9ea8277a2762b0aad587e90cc9722e63d4",
+    "class_counts": {
+      "Alluvial_Soil": 52,
+      "Arid_Soil": 284,
+      "Black_Soil": 255,
+      "Laterite_Soil": 219,
+      "Mountain_Soil": 201,
+      "Red_Soil": 109,
+      "Yellow_Soil": 69
+    },
+    "sample_files": [
+      "data\\raw\\soil_classification_nc\\LICENCE",
+      "data\\raw\\soil_classification_nc\\Orignal-Dataset\\Alluvial_Soil\\1.jpg",
+      "data\\raw\\soil_classification_nc\\Orignal-Dataset\\Alluvial_Soil\\10.jpg",
+      "data\\raw\\soil_classification_nc\\Orignal-Dataset\\Alluvial_Soil\\100.jpg",
+      "data\\raw\\soil_classification_nc\\Orignal-Dataset\\Alluvial_Soil\\101.jpg",
+      "data\\raw\\soil_classification_nc\\Orignal-Dataset\\Alluvial_Soil\\103.jpg",
+      "data\\raw\\soil_classification_nc\\Orignal-Dataset\\Alluvial_Soil\\104.jpg",
+      "data\\raw\\soil_classification_nc\\Orignal-Dataset\\Alluvial_Soil\\105.jpg",
+      "data\\raw\\soil_classification_nc\\Orignal-Dataset\\Alluvial_Soil\\11.jpg",
+      "data\\raw\\soil_classification_nc\\Orignal-Dataset\\Alluvial_Soil\\12.jpg"
+    ]
+  },
+  {
+    "dataset": "grano1/core_sample_image_data",
+    "source": "https://huggingface.co/datasets/grano1/core_sample_image_data",
+    "license": "MIT (dataset card); cite Granitzer et al. 2025",
+    "downloaded_utc": "2026-11-08",
+    "verified_manifest": "data/raw/soil_core_hf/manifest.json",
+    "usage": "separate geotechnical soil-core main fraction task; grouped borehole split"
+  }
+]
