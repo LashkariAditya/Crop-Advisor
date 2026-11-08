@@ -13,6 +13,9 @@ data/raw/**
 !data/raw/MANIFEST.json
 models/*.npz
 !models/crop_latest.npz
+!models/image_latest.npz
 !models/landcover_latest.npz
+!models/price_latest.npz
+!models/yield_latest.npz
 
 models/*.pt
