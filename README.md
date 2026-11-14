@@ -1,10 +1,27 @@
 # AI-Based Live Crop Recommendation System with Profitability and Rotation Planning
 
-**Application:** CropAdvisor · India
+**CropAdvisor** is an India-focused project that brings crop suitability, local weather and soil context, cultivation notes, crop-rotation suggestions, and farm-budget estimates into one web application. It is designed as a local research prototype; its predictions are not a substitute for field trials or advice from an agricultural expert.
 
-CropAdvisor is a local-first India-focused crop planning prototype. It combines a React/Vite interface, a FastAPI service, transparent farm economics, sourced cultivation guidance, NumPy models trained from scratch, and a locally run PyTorch transfer-learning soil-photo model. Model outputs are experimental decision support and require local agronomic verification.
+## What it does
 
-## Start the application (Windows)
+- Ranks crops from soil and climate measurements using a trained suitability model.
+- Retrieves available weather and soil context for coordinates supplied by the user.
+- Shows sourced cultivation plans for rice and wheat, including rotation notes.
+- Estimates costs, revenue, profit, break-even yield, and sensitivity scenarios from user-entered assumptions. Values are shown in INR and can be calculated for acres or hectares.
+- Classifies selected field-soil or satellite images with separate models and labels.
+- Provides annual yield and producer-price-index estimates for research; both are compared with simple persistence baselines.
+
+The application reports unavailable data instead of filling gaps with invented values. Product listings are demonstration examples, not live offers or market prices.
+
+## Run locally
+
+### Requirements
+
+- Windows with Python 3.11
+- Node.js 20 or newer
+- Internet access for live weather and soil lookups; those services may be unavailable at times
+
+From the project folder, create and activate a Python environment, then install the API dependencies:
 
 ```powershell
 cd D:\CropAdvisor
@@ -12,49 +29,45 @@ py -3.11 -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install -r requirements.txt
 Copy-Item config/.env.example .env
+```
+
+Start the API in that terminal:
+
+```powershell
 uvicorn backend.app:app --host 127.0.0.1 --port 8000
 ```
 
-In another PowerShell window:
+In a second terminal, start the web interface:
 
 ```powershell
 cd D:\CropAdvisor\frontend
-npm install
+npm ci
 npm run dev
 ```
 
-Open http://localhost:5173. Interactive API documentation is at http://127.0.0.1:8000/docs. For container deployment see [DEPLOYMENT.md](DEPLOYMENT.md). Current product prices are labelled MOCK. Mandi API access requires a current data.gov.in resource ID and API key.
+Open [http://localhost:5173](http://localhost:5173). The local API is at [http://127.0.0.1:8000](http://127.0.0.1:8000), with interactive documentation at [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs).
 
-## Project layout
+The optional mandi connector needs a current data.gov.in resource ID and API key in `.env`. Keep credentials out of source control. Without them, the app reports mandi data as unavailable.
 
-- `backend/` contains the API and external-data adapters.
-- `frontend/` contains the browser application.
-- `ml/` and `scripts/` contain model code, data preparation, and training commands.
-- `data/crops/` holds sourced crop plans; raw downloads stay under `data/raw/` and are excluded from Git.
-- `models/` holds the selected inference artifacts and their cards; dated training snapshots are kept in `models/runs/`.
-- `reports/` holds generated evaluation summaries, and `paper/` contains the manuscript and reproducibility notes.
-- `tests/` contains API, model, and farm-economics checks.
+## Model results and limits
 
-## Current trained models
+The table summarizes the current recorded evaluations. These are dataset-specific results, not evidence of farm-level performance.
 
-The crop, satellite, and time-series reference models are trained from scratch using NumPy. Soil-photo and soil-core experiments use ImageNet-pretrained ResNet-18 weights through PyTorch. Exact settings, split definitions, class metrics, and caveats are recorded in `models/*_latest_card.json`.
-
-| Task | Data and held-out evaluation | Intended interpretation |
+| Task | Recorded result | Interpretation |
 |---|---|---|
-| Crop suitability | Kaggle Crop Recommendation Dataset, 2,200 rows and 22 classes; stratified 70/15/15 split; current test accuracy 98.18%, macro-F1 0.982 | Benchmark classification only. Source describes augmented records. Not evidence of farm-level generalization. |
-| Soil-photo classes | 1,189 original photos, 7 repository labels; selected ImageNet-pretrained ResNet-18. Exploratory flip-averaged test accuracy 89.01%, macro-F1 0.854 | Photo label helper only. Non-commercial dataset with uncertain underlying photo provenance; not a soil test or moisture estimate. Not included in the public container. Score reuses a previously scored test split. A separate 3,909-image CyAUG experiment reached 83.15% validation accuracy (macro-F1 0.768) and was not promoted because it underperformed the original-only model. |
-| Soil core main fractions | 3,604 MIT-labeled soil-core images; ResNet-18; 10/2/3 boreholes held out for train/validation/test; grouped test accuracy 69.46%, macro-F1 0.555 | Separate geotechnical research task. Does not share labels with the field-soil classifier. |
-| Satellite land cover | EuroSAT RGB, 27,000 images, 10 classes; official 3,000/4,050/4,050 split; 12 epochs with two train-only augmented views per image; test accuracy 71.31%, macro-F1 0.703 | Satellite land-cover helper only; it does not classify soil or recommend crops. |
-| National annual yield trend | FAOSTAT India yield records, 14 crop series; chronological split, test starts 2015; test MAE 1,871 kg/ha (MLP) vs 529 kg/ha (last-value persistence) | The MLP loses to the baseline; API identifies persistence as validation-selected. National annual trend, not farm yield. |
-| National producer-price index | FAOSTAT annual producer-price index; 8 items; chronological test begins 2021; test MAE 16.78 index points (MLP) vs 9.35 (persistence) | The MLP loses to the baseline; API identifies persistence as validation-selected. Index (2014-2016=100), not INR/kg or mandi price. |
+| Crop suitability | 98.18% accuracy; 0.982 macro-F1 on a 330-row test split | Benchmark classification across 22 labels. The dataset description reports augmented source records. |
+| Soil-photo classification | 89.01% accuracy; 0.854 macro-F1 with flip averaging | Exploratory result on a 182-image split that had already been evaluated without averaging. The underlying dataset is imbalanced and has non-commercial terms. |
+| Satellite land cover | 71.31% accuracy; 0.703 macro-F1 on the official EuroSAT test split | Land-cover classification only; this model does not identify soil type. |
+| Soil-core fractions | 69.46% accuracy; 0.555 macro-F1 on grouped borehole holdouts | Separate geotechnical task, not an agricultural soil classifier. |
+| Annual yield and producer-price index | MLP test MAE is higher than persistence for both tasks | National annual trends only; not farm yield or local mandi prices. |
 
-Metrics are benchmark results, not claims of agronomic validity. Random image/crop splits may share source or collection context, and the small soil set is imbalanced. The price/yield time series are national aggregates. More data alone does not make those models field-grade.
+The soil-photo score remains below 90%. Adding 3,909 CycleGAN-generated images did not improve validation results, so that candidate was not selected. The soil-photo model is excluded from the public container because the dataset is licensed for non-commercial research and education. See the model cards for class-level results and split details, and [DATA_SOURCES.md](DATA_SOURCES.md) for source and license notes.
 
-The selected soil-photo model gained about 4.4 percentage points of test accuracy versus the earlier one-augmentation run; some minority-class performance remains poor. A supplemental CyAUG run with 3,909 generated images did not improve validation and is not selected. The selected model is for non-commercial research only and is excluded from the public build because its source dataset has CC BY-NC terms. Two train-only augmented views raised EuroSAT test accuracy from 70.86% to 71.31% and macro-F1 from 0.694 to 0.703 on the fixed official split; the increase is modest.
+## Data and model reproduction
 
-## Reproduce data and training
+Raw datasets are excluded from Git. Dataset URLs, checksums, license notes, the pinned soil repository version, and download status are documented in [DATA_SOURCES.md](DATA_SOURCES.md) and `data/raw/MANIFEST.json`. Dataset download settings are in `config/datasets.yaml`.
 
-Raw datasets are excluded from Git due to size. Their sources, licenses, checksums, pinned soil repository commit, download manifest, and caveats are recorded in [DATA_SOURCES.md](DATA_SOURCES.md) and `data/raw/MANIFEST.json`. The dataset download registry is `config/datasets.yaml`.
+To download and prepare the main datasets and train the available models:
 
 ```powershell
 python scripts/download_data.py
@@ -64,36 +77,56 @@ python scripts/prepare_faostat_forecasts.py
 python scripts/train_all.py
 ```
 
-The NumPy reference models use CPU. The local soil-photo experiment uses PyTorch transfer learning with torchvision ResNet-18 and also runs on CPU; it uses validation-selected checkpoints. Run `python scripts/train_soil_transfer.py` to train and `python scripts/evaluate_soil_transfer.py` to compare deterministic flip averaging. The latter reuses a test split previously scored once, so it is exploratory and requires a fresh external test before a formal claim. Soil-photo accuracy remains below 90%. Do not select synthetic-data runs or models using the test split. `train_all.py` skips a task when its reviewed data are absent.
+The soil-photo ResNet-18 experiment is separate and uses PyTorch transfer learning:
 
-The separate soil-core dataset/model is downloaded and retrained with `python scripts/download_soil_core.py` and `python scripts/train_soil_core.py`. It uses borehole-group splits because multiple photos from each borehole appear across the dataset's supplied splits. Its labels describe geotechnical fractions and are not agricultural soil types. The result is available from `POST /classify/soil-core` only in local mode and only as a clearly separate research output.
+```powershell
+python scripts/train_soil_transfer.py
+python scripts/evaluate_soil_transfer.py
+```
 
-## API predictions
+The flip-averaging comparison reuses a previously scored test split and must be treated as exploratory. Do not select a model using the test set. See [paper/reproducibility.md](paper/reproducibility.md) for detailed commands, split methods, and submission checks.
 
-- `POST /analyze`: field photo plus coordinates, area, and optional complete N/P/K, temperature, humidity, pH, rainfall inputs; returns live-context availability, crop ranking if inputs/model are present, and warnings. The local research mode classifies soil photos; the public build disables that non-commercial model and retains satellite land-cover classification.
-- `POST /classify/soil-core`: standalone geotechnical core main-fraction classifier. Its output is separate from agricultural field-soil classification.
-- `POST /forecast/yield` and `/forecast/price`: experimental local-only annual models. The public build omits these endpoints. In local mode, supply model features and the baseline lag column (`yield_persistence` or `price_lag_1`) to receive `recommended_estimate` and the raw neural-network prediction. The validation-selected persistence predictor is preferred for both current datasets.
-- `GET /plan/{crop}`: sourced plans for rice and wheat, with region caveats.
-- `GET /products/{crop}`: demonstration-only mock products; not live purchase data.
-- `/economics` and `/economics/compare`: calculations from editable user assumptions, reported in INR and for acres/hectares.
+## API overview
 
-The crop benchmark's measurement units and regional applicability must be checked before supplying inputs. Open-Meteo/NASA/SoilGrids availability is not guaranteed. An unavailable data service is reported as unavailable rather than replaced with invented values.
+| Route | Purpose |
+|---|---|
+| `GET /health` | API status and available model artifacts |
+| `POST /analyze` | Image, location, area, and optional soil/climate measurements; returns available context and model outputs |
+| `GET /plan/{crop}` | Sourced cultivation plan for a supported crop |
+| `GET /products/{crop}` | Demonstration product list; prices are mock values |
+| `POST /economics` | Profitability estimate using supplied costs, yield, and price assumptions |
+| `POST /economics/compare` | Compare supplied economics for several crops |
+| `POST /forecast/yield` and `POST /forecast/price` | Local research forecasts with baseline comparison |
+| `POST /classify/soil-core` | Separate geotechnical soil-core classification in local mode |
 
-The Analyze screen reads `/health` and displays which model artifacts are available or disabled; artifact availability is not a quality or field-validation claim.
+## Project structure
 
-## Project and paper materials
+```text
+backend/       API endpoints and external-data adapters
+config/        project, dataset, training, and market settings
+data/crops/    sourced cultivation plans
+frontend/      React and Vite application
+licenses/      third-party license notes
+ml/            model implementations and evaluation metrics
+models/        selected model artifacts and model cards
+models/runs/   dated training checkpoints and their cards
+paper/         manuscript draft and reproducibility guide
+reports/       generated evaluation summaries
+scripts/       data preparation, training, and evaluation commands
+tests/         API, model, product, and economics tests
+```
 
-- Conference-paper draft: [`paper/manuscript.md`](paper/manuscript.md)
-- Reproducibility checklist and limits: [`paper/reproducibility.md`](paper/reproducibility.md)
-- Dataset and license inventory: [`DATA_SOURCES.md`](DATA_SOURCES.md)
-- Public bundle notices: [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md)
-- API/deployment notes: [`DEPLOYMENT.md`](DEPLOYMENT.md)
+## Checks
 
-The paper is a draft for adaptation: add the real author names/affiliations, select a conference template, verify its current citation format, and re-render the final copy before submission. It deliberately reports weak baselines and limitations rather than implying field validation.
+```powershell
+pytest -q
+cd frontend
+npm run build
+```
 
-## Local public-build preview (not deployed)
+## Public-build preview
 
-After the teacher approves the project, the single-container profile can be checked locally without exposing it to the network:
+The project is configured for local use and has not been deployed publicly. After review and approval, the public-profile container can be previewed on loopback:
 
 ```powershell
 python scripts/download_data.py --dataset crop_recommendation_kaggle --dataset eurosat_rgb
@@ -105,12 +138,8 @@ cd ..
 docker compose -f docker-compose.public.yml up --build
 ```
 
-Open http://127.0.0.1:8000. This profile packages only the crop and satellite models, disables the non-commercial soil model and annual FAOSTAT forecast endpoints, serves the UI and API from one origin, and binds to loopback. It is a launch candidate, not a live public deployment. Review [PUBLIC_RELEASE.md](PUBLIC_RELEASE.md) before choosing a public host.
+Open [http://127.0.0.1:8000](http://127.0.0.1:8000). This profile omits the non-commercial soil-photo model and the annual aggregate forecast endpoints. Review [DEPLOYMENT.md](DEPLOYMENT.md), [PUBLIC_RELEASE.md](PUBLIC_RELEASE.md), and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) before selecting a host.
 
-## Checks
+## Paper
 
-```powershell
-pytest -q
-cd frontend
-npm run build
-```
+The conference-paper draft is in [paper/manuscript.md](paper/manuscript.md). It still needs author and affiliation details, a target conference template, and a final check of the results against the model cards before submission.
