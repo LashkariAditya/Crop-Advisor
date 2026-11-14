@@ -1,5 +1,6 @@
 project:
   name: CropAdvisor
+  title: "AI-Based Live Crop Recommendation System with Profitability and Rotation Planning"
   country: India
   target_crops: major_local_crops
   currency: INR

@@ -1,4 +1,6 @@
-# CropAdvisor
+# AI-Based Live Crop Recommendation System with Profitability and Rotation Planning
+
+**Application:** CropAdvisor · India
 
 CropAdvisor is a local-first India-focused crop planning prototype. It combines a React/Vite interface, a FastAPI service, transparent farm economics, sourced cultivation guidance, NumPy models trained from scratch, and a locally run PyTorch transfer-learning soil-photo model. Model outputs are experimental decision support and require local agronomic verification.
 
@@ -22,6 +24,16 @@ npm run dev
 ```
 
 Open http://localhost:5173. Interactive API documentation is at http://127.0.0.1:8000/docs. For container deployment see [DEPLOYMENT.md](DEPLOYMENT.md). Current product prices are labelled MOCK. Mandi API access requires a current data.gov.in resource ID and API key.
+
+## Project layout
+
+- `backend/` contains the API and external-data adapters.
+- `frontend/` contains the browser application.
+- `ml/` and `scripts/` contain model code, data preparation, and training commands.
+- `data/crops/` holds sourced crop plans; raw downloads stay under `data/raw/` and are excluded from Git.
+- `models/` holds the selected inference artifacts and their cards; dated training snapshots are kept in `models/runs/`.
+- `reports/` holds generated evaluation summaries, and `paper/` contains the manuscript and reproducibility notes.
+- `tests/` contains API, model, and farm-economics checks.
 
 ## Current trained models
 

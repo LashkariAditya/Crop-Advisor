@@ -1,4 +1,6 @@
-# CropAdvisor: A Reproducible Machine-Learning Prototype for Crop and Land-Cover Decision Support in India
+# AI-Based Live Crop Recommendation System with Profitability and Rotation Planning
+
+## CropAdvisor: An India-Focused Decision-Support Prototype
 
 **Author(s):** [Add author names]  
 **Affiliation(s):** [Add institution, department, city, country]  
@@ -91,7 +93,7 @@ CropAdvisor demonstrates an end-to-end agricultural planning application with tr
 
 [6] A.-N. Granitzer, J. Beck, J. Leo, and F. Tschuchnigg, “Explainable Insight into the Vision-Based Classification of Soil Core Samples from Close-Range Images,” 3FOMLIG, 2025. Dataset: [Hugging Face grano1/core_sample_image_data](https://huggingface.co/datasets/grano1/core_sample_image_data), MIT license.
 
-[7] CropAdvisor source, data manifest, model cards, training scripts, and API implementation, local project release accompanying this manuscript. [Add a public repository URL and version/commit before submission].
+[7] CropAdvisor source, data manifest, model cards, training scripts, and API implementation. Public repository: [https://github.com/LashkariAditya/Crop-Advisor](https://github.com/LashkariAditya/Crop-Advisor). Record the archived release tag or commit used for the final submission.
 
 ## Author checklist before submission
 

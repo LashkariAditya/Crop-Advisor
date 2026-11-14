@@ -5,7 +5,7 @@ import sys
 import numpy as np,pandas as pd
 ROOT=Path(__file__).resolve().parents[1]; sys.path.insert(0,str(ROOT))
 from ml.eval.metrics import classification_metrics,regression_metrics
-ap=argparse.ArgumentParser(); ap.add_argument('--csv'); ap.add_argument('--true'); ap.add_argument('--pred'); ap.add_argument('--task',choices=['classification','regression']); ap.add_argument('--out',default='models/evaluation.json'); a=ap.parse_args(); p=Path(a.out); p.parent.mkdir(parents=True,exist_ok=True)
+ap=argparse.ArgumentParser(); ap.add_argument('--csv'); ap.add_argument('--true'); ap.add_argument('--pred'); ap.add_argument('--task',choices=['classification','regression']); ap.add_argument('--out',default='reports/evaluation.json'); a=ap.parse_args(); p=Path(a.out); p.parent.mkdir(parents=True,exist_ok=True)
 if a.csv:
     if not all((a.true,a.pred,a.task)): ap.error('--csv requires --true, --pred, and --task')
     df=pd.read_csv(a.csv); f=classification_metrics if a.task=='classification' else regression_metrics; result=f(df[a.true].to_numpy(),df[a.pred].to_numpy())

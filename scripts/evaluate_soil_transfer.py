@@ -58,7 +58,8 @@ def main():
               'validation_without_tta': base_val, 'validation_with_flip_tta': tta_val,
               'test_selected_method': metrics(ty, tp, len(classes)),
               'note': 'The test split was previously scored for the no-TTA checkpoint; this second comparison is exploratory.'}
-    (ROOT/'models/soil_transfer_tta_evaluation.json').write_text(json.dumps(result, indent=2), encoding='utf-8')
+    report_path=ROOT/'reports/soil_transfer_tta_evaluation.json'; report_path.parent.mkdir(parents=True,exist_ok=True)
+    report_path.write_text(json.dumps(result, indent=2), encoding='utf-8')
     print(json.dumps(result, indent=2))
 
 
